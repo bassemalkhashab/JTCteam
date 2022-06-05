@@ -31,7 +31,7 @@ nav.navbar{
 }
 
 .navbar li a:hover{
-    font-weight: 600;
+    color: #000000;
 }
 
 .navbar .active a{
@@ -74,8 +74,7 @@ nav.navbar{
         align-self: flex-end;
         padding: 0;
         justify-content: space-around;
-        /* height: 45vh; */
-        /* margin-top: 5vh; */
+        padding-top: 1em;
     }
     nav ul li{
         height: 100%;
@@ -83,6 +82,10 @@ nav.navbar{
         display: flex;
         align-items: center;
         border-bottom: 1px solid #353535;
+    }
+    nav ul li:nth-of-type(1){
+        
+        border-top: 1px solid #353535;
     }
    
     .navbar .active a::after {
