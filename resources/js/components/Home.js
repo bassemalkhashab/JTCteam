@@ -5,7 +5,7 @@ function Home() {
   return (
       <div className="container">
             <h1 className='mt-5 fw-bolder'>We customize cleaning for you</h1>
-            <p className='mt-2'>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</p>
+            <h5 className='mt-3'>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</h5>
             <div className="d-flex justify-content-between mt-5" id='options'>
                 <Link to='/service/residential' className="option">
                     <img src="storage/sofa.png" alt="Sofa" height={300} />

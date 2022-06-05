@@ -16,7 +16,7 @@ function Header() {
                 <div className="container">
                     <img
                         className="navbar-brand"
-                        src="storage/LogoRGB.png"
+                        src="/storage/LogoRGB.png"
                         alt="JTCteam"
                     />
                     <div className="collapse navbar-collapse" id="collapse">
@@ -48,7 +48,7 @@ function Header() {
                 <div className="container">
                     <img
                         className="navbar-brand"
-                        src="storage/LogoRGB.png"
+                        src="/storage/LogoRGB.png"
                         alt="JTCteam"
                     />
                     <button
@@ -65,19 +65,19 @@ function Header() {
                     </button>
                     <div className={`collapse navbar-collapse ${isActive ? 'show': ''}`} id="collapse">
                         <ul>
-                            <li className={location.pathname == '/' ? 'active' : ''}>
+                            <li className={location.pathname.split('/')[1] == '' ? 'active' : ''}>
                                 <Link onClick={toggleClass} to="/">Home</Link>
                             </li>
-                            <li className={location.pathname == '/about' ? 'active' : ''}>
+                            <li className={location.pathname.split('/')[1] == 'about' ? 'active' : ''}>
                                 <Link onClick={toggleClass} to="/about">About</Link>
                             </li>
-                            <li className={location.pathname == '/service' ? 'active' : ''}>
+                            <li className={location.pathname.split('/')[1] == 'service' ? 'active' : ''}>
                                 <Link onClick={toggleClass} to="/service">Service</Link>
                             </li>
-                            <li className={location.pathname == '/contact' ? 'active' : ''}>
+                            <li className={location.pathname.split('/')[1] == 'contact' ? 'active' : ''}>
                                 <Link onClick={toggleClass} to="/contact">Contact</Link>
                             </li>
-                            <li className={location.pathname == '/market' ? 'active' : ''}>
+                            <li className={location.pathname.split('/')[1] == 'market' ? 'active' : ''}>
                                 <Link onClick={toggleClass} to="/market">Market</Link>
                             </li>
                             <li>

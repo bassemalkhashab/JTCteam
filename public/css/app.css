@@ -11296,3 +11296,7 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+:root {
+  --dark-grey:#353535;
+}

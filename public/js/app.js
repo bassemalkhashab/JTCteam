@@ -5543,7 +5543,7 @@ function Header() {
         className: "container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "navbar-brand",
-          src: "storage/LogoRGB.png",
+          src: "/storage/LogoRGB.png",
           alt: "JTCteam"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "collapse navbar-collapse",
@@ -5597,7 +5597,7 @@ function Header() {
         className: "container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "navbar-brand",
-          src: "storage/LogoRGB.png",
+          src: "/storage/LogoRGB.png",
           alt: "JTCteam"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
           className: "navbar-toggler",
@@ -5616,35 +5616,35 @@ function Header() {
           id: "collapse",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: location.pathname == '/' ? 'active' : '',
+              className: location.pathname.split('/')[1] == '' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 onClick: toggleClass,
                 to: "/",
                 children: "Home"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: location.pathname == '/about' ? 'active' : '',
+              className: location.pathname.split('/')[1] == 'about' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 onClick: toggleClass,
                 to: "/about",
                 children: "About"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: location.pathname == '/service' ? 'active' : '',
+              className: location.pathname.split('/')[1] == 'service' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 onClick: toggleClass,
                 to: "/service",
                 children: "Service"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: location.pathname == '/contact' ? 'active' : '',
+              className: location.pathname.split('/')[1] == 'contact' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 onClick: toggleClass,
                 to: "/contact",
                 children: "Contact"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: location.pathname == '/market' ? 'active' : '',
+              className: location.pathname.split('/')[1] == 'market' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 onClick: toggleClass,
                 to: "/market",
@@ -5704,8 +5704,8 @@ function Home() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
       className: "mt-5 fw-bolder",
       children: "We customize cleaning for you"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-      className: "mt-2",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+      className: "mt-3",
       children: "Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results."
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "d-flex justify-content-between mt-5",

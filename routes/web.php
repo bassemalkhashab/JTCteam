@@ -25,6 +25,15 @@ Route::get('/about', function () {
 Route::get('/service', function () {
     return view('home');
 });
+Route::get('/service/residential', function () {
+    return view('home');
+});
+Route::get('/service/commercial', function () {
+    return view('home');
+});
+Route::get('/service/clothes', function () {
+    return view('home');
+});
 Route::get('/market', function () {
     return view('home');
 });
