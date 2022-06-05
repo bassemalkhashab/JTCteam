@@ -1,9 +1,3 @@
-
-
-img{
-    object-fit: cover;
-}
-
 nav.navbar{
     display: flex;
     position: sticky;
@@ -34,6 +28,10 @@ nav.navbar{
     text-decoration: none;
     height: 100%;
     width: 100%;
+}
+
+.navbar li a:hover{
+    font-weight: 600;
 }
 
 .navbar .active a{
