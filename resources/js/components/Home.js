@@ -43,7 +43,9 @@ function Home() {
                 </Link>
             </div>
       </div>
-  )||(<div className='container d-flex justify-content-center align-items-center vh-100'><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>)
+  )||(<div id='loading-container'>
+      <section><span className='loader-38'></span></section>
+      </div>)
 }
 
 export default Home

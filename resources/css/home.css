@@ -28,60 +28,53 @@ h5{
 }
 
 /* ---------------------------------------------------------------------------- */
-/* loading icon */
+/* loading icon "https://codepen.io/vineethtrv/pen/NWxZqMM" */
 
-.lds-ellipsis {
+#loading-container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+  .loader-38 {
+    width: 48px;
+    height: 48px;
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
+    color: white;
+    -webkit-animation: rotation 1s linear infinite;
+            animation: rotation 1s linear infinite;
   }
-  .lds-ellipsis div {
+  .loader-38:after, .loader-38:before {
+    content: "";
     position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    transform: scale(0.5) translate(0, 0);
+    background-color: #F1B791;
     border-radius: 50%;
-    background: #83a3a9;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    -webkit-animation: animloader38 1s infinite ease-in-out;
+            animation: animloader38 1s infinite ease-in-out;
   }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+  .loader-38:before {
+    background-color: #32717E;
+    transform: scale(0.5) translate(-48px, -48px);
   }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
-  }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
+
+  @keyframes rotation {
     0% {
-      transform: scale(0);
+      transform: rotate(0deg);
     }
     100% {
-      transform: scale(1);
+      transform: rotate(360deg);
     }
   }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
+
+  @keyframes animloader38 {
+    50% {
+      transform: scale(1) translate(-50%, -50%);
     }
   }
