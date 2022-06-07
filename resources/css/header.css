@@ -64,9 +64,7 @@ nav.navbar{
     .navbar {
         z-index: 1;
     }
-   .navbar img{
-        width: 25%;
-   }
+
    .navbar button{
        border: none;
    }
@@ -122,6 +120,90 @@ nav.navbar{
         position: relative;
         z-index: 1;
         user-select: none;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(1){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(1){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(1){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.25s;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(2){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.05s;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(2){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(2){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.2s;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(3){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.1s;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(3){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(3){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.15s;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(4){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.15s;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(4){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(4){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.1s;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(5){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.2s;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(5){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(5){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.05s;
+    }
+    div.collapse.navbar-collapse ul li:nth-of-type(6){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in 0.25s;
+    }
+    div.collapse.navbar-collapse.show ul li:nth-of-type(6){
+        transform: translateX(0);
+        opacity: 1;
+    }
+    div.collapse.navbar-collapse.hide ul li:nth-of-type(6){
+        transform: translateX(-1em);
+        opacity: 0;
+        transition: all 0.3s ease-in;
     }
     div.input-group{
         

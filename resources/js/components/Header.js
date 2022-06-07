@@ -66,7 +66,7 @@ function Header() {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className={`collapse navbar-collapse ${isActive ? 'show': ''}`} id="collapse">
+                    <div className={`collapse navbar-collapse ${isActive ? 'show': 'hide'}`} id="collapse">
                         <ul>
                             <li className={location.pathname.split('/')[1] == '' ? 'active' : ''}>
                                 <Link onClick={toggleMenu} to="/">Home</Link>

@@ -27,8 +27,8 @@ function Home() {
 
   return loaded1&&loaded2&&loaded3&&(
       <>
-      <div className="container pt-5">
-            <h1 className='mt-5 fw-bolder'>We customize cleaning for you</h1>
+      <div className="container" id='home'>
+            <h1 className='fw-bolder'>We customize cleaning for you</h1>
             <h5 className='mt-3'>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</h5>
             <div className="d-flex justify-content-between mt-5" id='options'>
                 <Link to='/service/residential' className="option">
