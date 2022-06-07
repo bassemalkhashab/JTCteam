@@ -16,4 +16,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .postCss('resources/css/header.css', 'public/css')
     .postCss('resources/css/home.css', 'public/css')
+    .postCss('resources/css/footer.css', 'public/css')
     ;

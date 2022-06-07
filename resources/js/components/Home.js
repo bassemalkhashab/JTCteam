@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
+import Footer from "../components/Footer";
 
 function Home() {
     const [loaded1, setLoaded1]=useState(false);
@@ -25,7 +26,8 @@ function Home() {
     },[]);
 
   return loaded1&&loaded2&&loaded3&&(
-      <div className="container">
+      <>
+      <div className="container pt-5">
             <h1 className='mt-5 fw-bolder'>We customize cleaning for you</h1>
             <h5 className='mt-3'>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</h5>
             <div className="d-flex justify-content-between mt-5" id='options'>
@@ -43,6 +45,8 @@ function Home() {
                 </Link>
             </div>
       </div>
+      <Footer/>
+      </>
   )||(<div id='loading-container'>
       <section><span className='loader-38'></span></section>
       </div>)

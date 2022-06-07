@@ -22,3 +22,57 @@ img{
 :root{
     --dark-grey:#353535;
 }
+
+
+/* ---------------------------------------------------------------------------- */
+/* loading icon "https://codepen.io/vineethtrv/pen/NWxZqMM" */
+
+#loading-container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+  .loader-38 {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    color: white;
+    -webkit-animation: rotation 1s linear infinite;
+            animation: rotation 1s linear infinite;
+  }
+  .loader-38:after, .loader-38:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    transform: scale(0.5) translate(0, 0);
+    background-color: #F1B791;
+    border-radius: 50%;
+    -webkit-animation: animloader38 1s infinite ease-in-out;
+            animation: animloader38 1s infinite ease-in-out;
+  }
+  .loader-38:before {
+    background-color: #32717E;
+    transform: scale(0.5) translate(-48px, -48px);
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animloader38 {
+    50% {
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }

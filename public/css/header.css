@@ -1,7 +1,6 @@
 nav.navbar{
     display: flex;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: var(--bs-gray-100);
@@ -62,6 +61,9 @@ nav.navbar{
 
 
 @media(max-width:1000px){
+    .navbar {
+        z-index: 1;
+    }
    .navbar img{
         width: 25%;
    }
@@ -70,7 +72,6 @@ nav.navbar{
    }
     nav ul{
         
-      
         flex-direction: column  ;
         align-self: flex-end;
         padding: 0;
@@ -117,7 +118,13 @@ nav.navbar{
         transition: height 0.5s ease-in-out;
     }
     div.collapse.navbar-collapse.show{
-        height:100vh;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
     }
     div.input-group{
         

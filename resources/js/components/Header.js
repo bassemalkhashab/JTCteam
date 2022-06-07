@@ -6,8 +6,11 @@ function Header() {
     const location = useLocation();
 
 
-  const toggleClass = () => {
+  const toggleMenu = () => {
     setActive(!isActive);
+    window.scrollTo(0, 0);
+    let Body = document.querySelector('#Body');
+    isActive? Body.style.display='block': setTimeout(()=>{Body.style.display='none'},500);
   };
 
     if (window.innerWidth > 1000) {
@@ -59,26 +62,26 @@ function Header() {
                         aria-controls="navbarSupportedContent"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                        onClick={toggleClass}
+                        onClick={toggleMenu}
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className={`collapse navbar-collapse ${isActive ? 'show': ''}`} id="collapse">
                         <ul>
                             <li className={location.pathname.split('/')[1] == '' ? 'active' : ''}>
-                                <Link onClick={toggleClass} to="/">Home</Link>
+                                <Link onClick={toggleMenu} to="/">Home</Link>
                             </li>
                             <li className={location.pathname.split('/')[1] == 'about' ? 'active' : ''}>
-                                <Link onClick={toggleClass} to="/about">About</Link>
+                                <Link onClick={toggleMenu} to="/about">About</Link>
                             </li>
                             <li className={location.pathname.split('/')[1] == 'service' ? 'active' : ''}>
-                                <Link onClick={toggleClass} to="/service">Service</Link>
+                                <Link onClick={toggleMenu} to="/service">Service</Link>
                             </li>
                             <li className={location.pathname.split('/')[1] == 'contact' ? 'active' : ''}>
-                                <Link onClick={toggleClass} to="/contact">Contact</Link>
+                                <Link onClick={toggleMenu} to="/contact">Contact</Link>
                             </li>
                             <li className={location.pathname.split('/')[1] == 'market' ? 'active' : ''}>
-                                <Link onClick={toggleClass} to="/market">Market</Link>
+                                <Link onClick={toggleMenu} to="/market">Market</Link>
                             </li>
                             <li>
                             <div className="input-group rounded">

@@ -8,11 +8,12 @@ function App() {
     return (
         <Router>
             <Header />
+            <div className="pt-5" id="Body">
             <Switch>
                 <Route exact path="/">
-                    <div>
+                    
                         <Home/>
-                    </div>
+                    
                 </Route>
                 <Route path="/about">
                     <div>
@@ -35,6 +36,7 @@ function App() {
                     </div>
                 </Route>
             </Switch>
+            </div>
         </Router>
     );
 }
