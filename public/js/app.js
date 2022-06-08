@@ -5510,6 +5510,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function About() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "container",
     children: "About"
   });
 }
@@ -5865,6 +5866,11 @@ function Home() {
       loaded3 = _useState6[0],
       setLoaded3 = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      loaded4 = _useState8[0],
+      setLoaded4 = _useState8[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var image1 = new Image();
     image1.src = '/storage/sofa.png';
@@ -5886,19 +5892,38 @@ function Home() {
     image3.onload = function () {
       setLoaded3(true);
     };
+
+    var image4 = new Image();
+    image4.src = '/storage/cover.jpg';
+
+    image4.onload = function () {
+      setLoaded4(true);
+    };
   }, []);
-  return loaded1 && loaded2 && loaded3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  return loaded1 && loaded2 && loaded3 && loaded4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "container",
-      id: "home",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      id: "cover",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        src: "/storage/cover.jpg",
+        alt: "cover"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "filter"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
         className: "fw-bolder",
         children: "We customize cleaning for you"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
-        className: "mt-3",
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "container",
+      id: "home",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
         children: "Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        to: "/about",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          children: "Learn more"
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "d-flex justify-content-between mt-5",
+        className: "d-flex justify-content-between mt-5 pt-5",
         id: "options",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
           to: "/service/residential",
@@ -29484,6 +29509,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./resources/css/footer.css ***!
   \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/about.css":
+/*!*********************************!*\
+  !*** ./resources/css/about.css ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -63816,6 +63854,7 @@ function _setPrototypeOf(o, p) {
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/about": 0,
 /******/ 			"css/footer": 0,
 /******/ 			"css/home": 0,
 /******/ 			"css/header": 0
@@ -63868,11 +63907,12 @@ function _setPrototypeOf(o, p) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/header.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/home.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/footer.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/header.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/home.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/footer.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/about","css/footer","css/home","css/header"], () => (__webpack_require__("./resources/css/about.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
