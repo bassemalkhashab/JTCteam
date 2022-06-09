@@ -5504,34 +5504,149 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_indiana_drag_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-indiana-drag-scroll */ "./node_modules/react-indiana-drag-scroll/dist/index.es.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
+/* harmony import */ var _Spinners__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Spinners */ "./resources/js/components/Spinners.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
+
+
+
+
+
+var customers = [{
+  name: "Barajon Restaurant",
+  img: "customer-1.png",
+  'bg-color': "bg-light"
+}, {
+  name: "Shelby's Legendary Shawerma",
+  img: "customer-2.png",
+  'bg-color': ""
+}, {
+  name: "BaBaZ Shawerma Shawerma Grill",
+  img: "customer-3.png",
+  'bg-color': "bg-light"
+}, {
+  name: "Shish Mediterian Kitchen",
+  img: "customer-4.png",
+  'bg-color': ""
+}, {
+  name: "GiGs Indian Cuisine",
+  img: "customer-6.png",
+  'bg-color': "bg-light"
+}, {
+  name: "Hyatt Mosque",
+  img: "customer-7.png",
+  'bg-color': ""
+}, {
+  name: "Bark Marketing Agency",
+  img: "customer-9.png",
+  'bg-color': "bg-light"
+}, {
+  name: "KFC Restaurant",
+  img: "customer-10.png",
+  'bg-color': "bg-light"
+}, {
+  name: "BTRMLK Chicken Restaurant",
+  img: "customer-11.png",
+  'bg-color': ""
+}, {
+  name: "Rr 3 Superior Ave Shell",
+  img: "customer-12.png",
+  'bg-color': "bg-light"
+}];
 
 function About() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "reviews",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-        children: "WHY YOU SHOULD CHOOSE US?"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-        children: "Accompanying Our Cleaning Services, Just Try Cleaning Also Offer A Full Laundry And Ironing Service To Our Customers. Ironing Can Be Incorporated Into Your Regular Domestic Cleaning Or Can Be Sorted Separately. Our Highly Trained Cleaners Are Also Ironing Experts, And Will Ensure That Every Item Is Crease-Free. We Will Iron Everything From Shirts To Bedsheets, Towels To T-Shirts - Simply Let Us Know What You\u2019d Like Ironed And We\u2019ll Sort It For You."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-          children: "Reviews"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-          "class": "fa-solid fa-chevron-right"
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loaded1 = _useState2[0],
+      setLoaded1 = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var image1 = new Image();
+    image1.src = '/storage/About.png';
+
+    image1.onload = function () {
+      setLoaded1(true);
+    };
+  }, []);
+  return loaded1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      id: "reviews",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "container w-50",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          children: "WHY YOU SHOULD CHOOSE US?"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          children: "Accompanying Our Cleaning Services, Just Try Cleaning Also Offer A Full Laundry And Ironing Service To Our Customers. Ironing Can Be Incorporated Into Your Regular Domestic Cleaning Or Can Be Sorted Separately. Our Highly Trained Cleaners Are Also Ironing Experts, And Will Ensure That Every Item Is Crease-Free. We Will Iron Everything From Shirts To Bedsheets, Towels To T-Shirts - Simply Let Us Know What You\u2019d Like Ironed And We\u2019ll Sort It For You."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+          to: "/about/reviews",
+          id: "reviews-button",
+          children: ["Reviews", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+            className: "fa-solid fa-chevron-right"
+          })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
         src: "/storage/About.png",
         alt: "Cleaning"
       })]
-    })
-  });
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      id: "customers",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        children: "Our Customers"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_indiana_drag_scroll__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        className: "scroll-container",
+        children: customers.map(function (customer, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            id: "customer-".concat(index),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "avatar rounded-circle ".concat(customer["bg-color"]),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                src: "/storage/".concat(customer.img),
+                alt: "Logo"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h5", {
+              children: customer.name
+            })]
+          }, index);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "container scroll-buttons",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          className: "left",
+          onClick: function onClick() {
+            return document.querySelector('.scroll-container').scrollLeft -= 400;
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+            className: "fa-solid fa-arrow-left"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          className: "right",
+          onClick: function onClick() {
+            return document.querySelector('.scroll-container').scrollLeft += 400;
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
+            className: "fa-solid fa-arrow-right"
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+  }) || /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Spinners__WEBPACK_IMPORTED_MODULE_3__["default"], {});
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (About);
@@ -5847,9 +5962,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Spinners__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Spinners */ "./resources/js/components/Spinners.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5861,6 +5977,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -5919,75 +6036,99 @@ function Home() {
       setLoaded4(true);
     };
   }, []);
-  return loaded1 && loaded2 && loaded3 && loaded4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return loaded1 && loaded2 && loaded3 && loaded4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       id: "cover",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
         src: "/storage/cover.jpg",
         alt: "cover"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "filter"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
         className: "fw-bolder",
         children: "We customize cleaning for you"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "container",
       id: "home",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
         children: "Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
         to: "/about",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
           children: "Learn more"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "d-flex justify-content-between mt-5 pt-5",
         id: "options",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/service/residential",
           className: "option",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/storage/sofa.png",
             alt: "Sofa",
             height: 300
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
             children: "Residential"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/service/commercial",
           className: "option",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/storage/plate.png",
             alt: "Sofa",
             height: 300
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
             children: "Commercial"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/service/clothes",
           className: "option",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/storage/clothes.png",
             alt: "Sofa",
             height: 300
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h5", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
             children: "Clothes"
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
-  }) || /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+  }) || /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Spinners__WEBPACK_IMPORTED_MODULE_2__["default"], {});
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./resources/js/components/Spinners.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Spinners.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Spinners() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     id: "loading-container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
         className: "loader-38"
       })
     })
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Spinners);
 
 /***/ }),
 
@@ -56947,6 +57088,44 @@ function checkDCE() {
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-indiana-drag-scroll/dist/index.es.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-indiana-drag-scroll/dist/index.es.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */var n=function(t,e){return(n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n])})(t,e)};var o,r,i=(function(t){
+/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+!function(){var e={}.hasOwnProperty;function n(){for(var t=[],o=0;o<arguments.length;o++){var r=arguments[o];if(r){var i=typeof r;if("string"===i||"number"===i)t.push(r);else if(Array.isArray(r)&&r.length){var s=n.apply(null,r);s&&t.push(s)}else if("object"===i)for(var l in r)e.call(r,l)&&r[l]&&t.push(l)}}return t.join(" ")}t.exports?(n.default=n,t.exports=n):window.classNames=n}()}(r={path:o,exports:{},require:function(t,e){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==e&&r.path)}},r.exports),r.exports);function s(t,e,n){var o,r,i,s,l;function a(){var c=Date.now()-s;c<e&&c>=0?o=setTimeout(a,e-c):(o=null,n||(l=t.apply(i,r),i=r=null))}null==e&&(e=100);var c=function(){i=this,r=arguments,s=Date.now();var c=n&&!o;return o||(o=setTimeout(a,e)),c&&(l=t.apply(i,r),i=r=null),l};return c.clear=function(){o&&(clearTimeout(o),o=null)},c.flush=function(){o&&(l=t.apply(i,r),i=r=null,clearTimeout(o),o=null)},c}s.debounce=s;var l=s;!function(t,e){void 0===e&&(e={});var n=e.insertAt;if(t&&"undefined"!=typeof document){var o=document.head||document.getElementsByTagName("head")[0],r=document.createElement("style");r.type="text/css","top"===n&&o.firstChild?o.insertBefore(r,o.firstChild):o.appendChild(r),r.styleSheet?r.styleSheet.cssText=t:r.appendChild(document.createTextNode(t))}}(".indiana-scroll-container {\n  overflow: auto; }\n  .indiana-scroll-container--dragging {\n    scroll-behavior: auto !important; }\n    .indiana-scroll-container--dragging > * {\n      pointer-events: none;\n      cursor: -webkit-grab;\n      cursor: grab; }\n  .indiana-scroll-container--hide-scrollbars {\n    overflow: hidden;\n    overflow: -moz-scrollbars-none;\n    -ms-overflow-style: none;\n    scrollbar-width: none; }\n    .indiana-scroll-container--hide-scrollbars::-webkit-scrollbar {\n      display: none !important;\n      height: 0 !important;\n      width: 0 !important;\n      background: transparent !important;\n      -webkit-appearance: none !important; }\n  .indiana-scroll-container--native-scroll {\n    overflow: auto; }\n\n.indiana-dragging {\n  cursor: -webkit-grab;\n  cursor: grab; }\n");var a,c=(a="indiana-scroll-container",function(t,e){if(!t)return a;var n;"string"==typeof t?n=t:e=t;var o=a;return n&&(o+="__"+n),o+(e?Object.keys(e).reduce((function(t,n){var r=e[n];return r&&(t+=" "+("boolean"==typeof r?o+"--"+n:o+"--"+n+"_"+r)),t}),""):"")}),p=function(e){function o(n){var o=e.call(this,n)||this;return o.onEndScroll=function(){o.scrolling=!1,!o.pressed&&o.started&&o.processEnd()},o.onScroll=function(t){var e=o.container.current;e.scrollLeft===o.scrollLeft&&e.scrollTop===o.scrollTop||(o.scrolling=!0,o.processScroll(t),o.onEndScroll())},o.onTouchStart=function(t){var e=o.props.nativeMobileScroll;if(o.isDraggable(t.target))if(o.internal=!0,e&&o.scrolling)o.pressed=!0;else{var n=t.touches[0];o.processClick(t,n.clientX,n.clientY),!e&&o.props.stopPropagation&&t.stopPropagation()}},o.onTouchEnd=function(t){var e=o.props.nativeMobileScroll;o.pressed&&(!o.started||o.scrolling&&e?o.pressed=!1:o.processEnd(),o.forceUpdate())},o.onTouchMove=function(t){var e=o.props.nativeMobileScroll;if(o.pressed&&(!e||!o.isMobile)){var n=t.touches[0];n&&o.processMove(t,n.clientX,n.clientY),t.preventDefault(),o.props.stopPropagation&&t.stopPropagation()}},o.onMouseDown=function(t){o.isDraggable(t.target)&&o.isScrollable()&&(o.internal=!0,-1!==o.props.buttons.indexOf(t.button)&&(o.processClick(t,t.clientX,t.clientY),t.preventDefault(),o.props.stopPropagation&&t.stopPropagation()))},o.onMouseMove=function(t){o.pressed&&(o.processMove(t,t.clientX,t.clientY),t.preventDefault(),o.props.stopPropagation&&t.stopPropagation())},o.onMouseUp=function(t){o.pressed&&(o.started?o.processEnd():(o.internal=!1,o.pressed=!1,o.forceUpdate(),o.props.onClick&&o.props.onClick(t)),t.preventDefault(),o.props.stopPropagation&&t.stopPropagation())},o.container=react__WEBPACK_IMPORTED_MODULE_0__.createRef(),o.onEndScroll=l(o.onEndScroll,300),o.scrolling=!1,o.started=!1,o.pressed=!1,o.internal=!1,o.getRef=o.getRef.bind(o),o}return function(t,e){function o(){this.constructor=t}n(t,e),t.prototype=null===e?Object.create(e):(o.prototype=e.prototype,new o)}(o,e),o.prototype.componentDidMount=function(){var t=this.props.nativeMobileScroll,e=this.container.current;window.addEventListener("mouseup",this.onMouseUp),window.addEventListener("mousemove",this.onMouseMove),window.addEventListener("touchmove",this.onTouchMove,{passive:!1}),window.addEventListener("touchend",this.onTouchEnd),e.addEventListener("touchstart",this.onTouchStart,{passive:!1}),e.addEventListener("mousedown",this.onMouseDown,{passive:!1}),t&&(this.isMobile=this.isMobileDevice(),this.isMobile&&this.forceUpdate())},o.prototype.componentWillUnmount=function(){window.removeEventListener("mouseup",this.onMouseUp),window.removeEventListener("mousemove",this.onMouseMove),window.removeEventListener("touchmove",this.onTouchMove),window.removeEventListener("touchend",this.onTouchEnd)},o.prototype.getElement=function(){return this.container.current},o.prototype.isMobileDevice=function(){return void 0!==window.orientation||-1!==navigator.userAgent.indexOf("IEMobile")},o.prototype.isDraggable=function(t){var e=this.props.ignoreElements;if(e){var n=t.closest(e);return null===n||n.contains(this.getElement())}return!0},o.prototype.isScrollable=function(){var t=this.container.current;return t&&(t.scrollWidth>t.clientWidth||t.scrollHeight>t.clientHeight)},o.prototype.processClick=function(t,e,n){var o=this.container.current;this.scrollLeft=o.scrollLeft,this.scrollTop=o.scrollTop,this.clientX=e,this.clientY=n,this.pressed=!0},o.prototype.processStart=function(t){void 0===t&&(t=!0);var e=this.props.onStartScroll;this.started=!0,t&&document.body.classList.add("indiana-dragging"),e&&e({external:!this.internal}),this.forceUpdate()},o.prototype.processScroll=function(t){if(this.started){var e=this.props.onScroll;e&&e({external:!this.internal})}else this.processStart(!1)},o.prototype.processMove=function(t,e,n){var o=this.props,r=o.horizontal,i=o.vertical,s=o.activationDistance,l=o.onScroll,a=this.container.current;this.started?(r&&(a.scrollLeft-=e-this.clientX),i&&(a.scrollTop-=n-this.clientY),l&&l({external:!this.internal}),this.clientX=e,this.clientY=n,this.scrollLeft=a.scrollLeft,this.scrollTop=a.scrollTop):(r&&Math.abs(e-this.clientX)>s||i&&Math.abs(n-this.clientY)>s)&&(this.clientX=e,this.clientY=n,this.processStart())},o.prototype.processEnd=function(){var t=this.props.onEndScroll;this.container.current&&t&&t({external:!this.internal}),this.pressed=!1,this.started=!1,this.scrolling=!1,this.internal=!1,document.body.classList.remove("indiana-dragging"),this.forceUpdate()},o.prototype.getRef=function(t){[this.container,this.props.innerRef].forEach((function(e){e&&("function"==typeof e?e(t):e.current=t)}))},o.prototype.render=function(){var e=this.props,n=e.children,o=e.draggingClassName,r=e.className,s=e.style,l=e.hideScrollbars,a=e.component;return react__WEBPACK_IMPORTED_MODULE_0__.createElement(a,{className:i(r,this.pressed&&o,c({dragging:this.pressed,"hide-scrollbars":l,"native-scroll":this.isMobile})),style:s,ref:this.getRef,onScroll:this.onScroll},n)},o.defaultProps={nativeMobileScroll:!0,hideScrollbars:!0,activationDistance:10,vertical:!0,horizontal:!0,stopPropagation:!1,style:{},component:"div",buttons:[0]},o}(react__WEBPACK_IMPORTED_MODULE_0__.PureComponent);/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (p);
+//# sourceMappingURL=index.es.js.map
 
 
 /***/ }),

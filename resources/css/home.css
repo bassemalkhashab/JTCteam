@@ -43,11 +43,12 @@
 
 #home h5 + a button {
     border: transparent;
-    border-radius: 10px;
+    border-radius: 5px;
     background: linear-gradient(to top ,#353535, #434343);
     width: 12em;
     height: 4em;
     color: white;
+    font-size: large;
 }
 
 #home h5 + a button:hover {
@@ -94,8 +95,18 @@ h5{
     #options{
         flex-direction: column;
     }
- 
     
+    #home h5{
+        text-align: center;
+    }
+
+    #home > a{
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     #cover h1{
 
         left:1em;

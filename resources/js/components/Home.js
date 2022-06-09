@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
+import Spinners from './Spinners';
 
 function Home() {
     const [loaded1, setLoaded1]=useState(false);
@@ -58,9 +59,7 @@ function Home() {
       </div>
       <Footer/>
       </>
-  )||(<div id='loading-container'>
-      <section><span className='loader-38'></span></section>
-      </div>)
+  )||(<Spinners/>)
 }
 
 export default Home
