@@ -91,6 +91,10 @@
     background-color: transparent;
 }
 
+#spinner-border{
+    display: none;
+}
+
 @media(max-width:1000px){
     .review{
         grid-template-areas: "b b b b a a"

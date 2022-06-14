@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, ButtonGroup, ToggleButton } from "react-bootstrap";
+import { Form, Button, ButtonGroup, ToggleButton, Spinner } from "react-bootstrap";
 import Footer from "./Footer";
 import Spinners from "./Spinners";
 
@@ -11,6 +11,7 @@ function Reviews() {
     const [review, setReview] = useState("");
     const [image, setImage] = useState(null);
     const [photos, setPhotos] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const radios = [
         { name: "1", value: "1" },
         { name: "2", value: "2" },
@@ -38,7 +39,8 @@ function Reviews() {
 
     function handleReviewSubmit(e) {
         e.preventDefault();
-       
+        document.querySelector('#submit-button').innerHTML="";
+        setIsLoading(true);
         const inputFile = document.querySelector('input[type="file"]');
    
         console.log(inputFile)
@@ -65,7 +67,14 @@ function Reviews() {
         fetch('/about/reviews', reviewOptions)
         .then(res => res.json())
         .then(data=> console.log(data))
-        .then(document.querySelector("#form-body").style.display ="none")
+        .then(()=>{
+            const submitButton =document.querySelector('#submit-button');
+            
+            setIsLoading(false);
+            submitButton.style.backgroundColor="#0b5ed7";
+            submitButton.innerHTML="Submit";
+            document.querySelector("#form-body").style.display ="none";
+        })
     }
 
     return reviews&&photos&&(
@@ -148,10 +157,12 @@ function Reviews() {
 
                     <Button
                         className="w-100 my-3"
+                        id="submit-button"
                         variant="primary"
                         type="submit"
                     >
                         Submit
+                        {isLoading&&<Spinner id="#spinner-border" animation="border" variant="light"  />}
                     </Button>
                 </Form>
             </div>
@@ -160,8 +171,7 @@ function Reviews() {
                 <button
                     className="btn-style-1 add-review-button"
                     onClick={() => {
-                        document.querySelector("#form-body").style.display =
-                            "flex";
+                        document.querySelector("#form-body").style.display ="flex";
                     }}
                 >
                     <i className="fa-solid fa-plus"></i>Add review
