@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,15 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('home');
 });
+Route::get('/about/reviews', function () {
+    return view('home');
+});
+
+Route::post('/about/reviews', [ReviewsController::class, 'submitReview']);
+Route::get('/about/get-reviews', [ReviewsController::class, 'getReviews']);
+
+Route::get('/about/customers', [CustomersController::class, 'displayAll']);
+
 Route::get('/service', function () {
     return view('home');
 });

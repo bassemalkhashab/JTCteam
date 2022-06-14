@@ -4,22 +4,23 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import Footer from "./Footer";
 import Spinners from "./Spinners";
 
-var customers = [
-    { name: "Barajon Restaurant", img: "customer-1.png", 'bg-color':"bg-light" },
-    { name: "Shelby's Legendary Shawerma", img: "customer-2.png", 'bg-color':"" },
-    { name: "BaBaZ Shawerma Shawerma Grill", img: "customer-3.png", 'bg-color':"bg-light"},
-    { name: "Shish Mediterian Kitchen", img: "customer-4.png", 'bg-color':"" },
-    { name: "GiGs Indian Cuisine", img: "customer-6.png", 'bg-color':"bg-light" },
-    { name: "Hyatt Mosque", img: "customer-7.png", 'bg-color':"" },
-    { name: "Bark Marketing Agency", img: "customer-9.png", 'bg-color':"bg-light" },
-    { name: "KFC Restaurant", img: "customer-10.png", 'bg-color':"bg-light" },
-    { name: "BTRMLK Chicken Restaurant", img: "customer-11.png", 'bg-color':"" },
-    { name: "Rr 3 Superior Ave Shell", img: "customer-12.png", 'bg-color':"bg-light" },
-];
+// var customers = [
+//     { name: "Barajon Restaurant", img: "customer-1.png", 'bg-color':"bg-light" },
+//     { name: "Shelby's Legendary Shawerma", img: "customer-2.png", 'bg-color':"" },
+//     { name: "BaBaZ Shawerma Shawerma Grill", img: "customer-3.png", 'bg-color':"bg-light"},
+//     { name: "Shish Mediterian Kitchen", img: "customer-4.png", 'bg-color':"" },
+//     { name: "GiGs Indian Cuisine", img: "customer-6.png", 'bg-color':"bg-light" },
+//     { name: "Hyatt Mosque", img: "customer-7.png", 'bg-color':"" },
+//     { name: "Bark Marketing Agency", img: "customer-9.png", 'bg-color':"bg-light" },
+//     { name: "KFC Restaurant", img: "customer-10.png", 'bg-color':"bg-light" },
+//     { name: "BTRMLK Chicken Restaurant", img: "customer-11.png", 'bg-color':"" },
+//     { name: "Rr 3 Superior Ave Shell", img: "customer-12.png", 'bg-color':"bg-light" },
+// ];
 
 function About() {
 
     const [loaded1 , setLoaded1] = useState(false);
+    const [customers, setCustomers]= useState(null);
 
     useEffect(()=>{
         const image1 = new Image();
@@ -27,9 +28,12 @@ function About() {
         image1.onload = () => {
             setLoaded1(true);
         };
+        fetch('/about/customers')
+        .then(res => res.json())
+        .then(data => setCustomers(data))
     },[]);
 
-    return loaded1&&(
+    return loaded1&&customers&&(
         <>
             <div id="reviews">
                 <div className="container w-50">
@@ -59,8 +63,8 @@ function About() {
                     {
                         customers.map((customer, index)=>(
                             <div key={index} id={`customer-${index}`}>
-                                <div className={`avatar rounded-circle ${customer["bg-color"]}`}>
-                                    <img src={`/storage/${customer.img}`} alt="Logo" />
+                                <div className={`avatar rounded-circle ${customer["background"]}`}>
+                                    <img src={`/storage/${customer.image}`} alt="Logo" />
                                 </div>
                                 <h5>{customer.name}</h5>
                             </div>

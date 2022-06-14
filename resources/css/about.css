@@ -137,6 +137,9 @@
         width: 50%;
         margin-left: auto;
     }
+    .scroll-container > div {
+        margin: 2em;
+    }
 }
 
 

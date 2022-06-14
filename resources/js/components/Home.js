@@ -41,7 +41,7 @@ function Home() {
           </div>
       <div className="container" id='home'>
             <h5>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</h5>
-            <Link to="/about"><button>Learn more</button></Link>
+            <Link to="/about"><button className='btn-style-1'>Learn more</button></Link>
             <div className="d-flex justify-content-between mt-5 pt-5" id='options'>
                 <Link to='/service/residential' className="option">
                     <img src="/storage/sofa.png" alt="Sofa" height={300} />
