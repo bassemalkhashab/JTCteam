@@ -36,9 +36,9 @@ function About() {
     return loaded1&&customers&&(
         <>
             <div id="reviews">
-                <div className="container w-50">
-                    <h2>WHY YOU SHOULD CHOOSE US?</h2>
-                    <p>
+                <div className="container w-50 ">
+                    <h2 className="mb-3">WHY YOU SHOULD CHOOSE US?</h2>
+                    <p className="mb-5">
                         Accompanying Our Cleaning Services, Just Try Cleaning
                         Also Offer A Full Laundry And Ironing Service To Our
                         Customers. Ironing Can Be Incorporated Into Your Regular
@@ -49,7 +49,7 @@ function About() {
                         - Simply Let Us Know What You’d Like Ironed And We’ll
                         Sort It For You.
                     </p>
-                    <Link to="/about/reviews" id="reviews-button">
+                    <Link to="/about/reviews" id="reviews-button" className="mb-3">
                         Reviews
                         <i className="fa-solid fa-chevron-right"></i>
                     </Link>

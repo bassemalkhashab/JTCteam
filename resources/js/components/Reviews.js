@@ -35,7 +35,7 @@ function Reviews() {
         })
 
         
-    },[reviews]);
+    },[]);
 
     function handleReviewSubmit(e) {
         e.preventDefault();
@@ -74,6 +74,7 @@ function Reviews() {
             submitButton.style.backgroundColor="#0b5ed7";
             submitButton.innerHTML="Submit";
             document.querySelector("#form-body").style.display ="none";
+            document.querySelector("#review-form").reset();
         })
     }
 
@@ -166,7 +167,7 @@ function Reviews() {
                     </Button>
                 </Form>
             </div>
-            <div className="container add-review d-flex justify-content-between">
+            <div className="container add-review d-flex justify-content-between my-3">
                 <h2 className="d-inline-flex">Reviews</h2>
                 <button
                     className="btn-style-1 add-review-button"
