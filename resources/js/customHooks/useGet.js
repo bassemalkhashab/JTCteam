@@ -6,7 +6,7 @@ function useGet(url) {
     const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
-        fetch("flowers.jpg")
+        fetch(url)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Network response was not OK");

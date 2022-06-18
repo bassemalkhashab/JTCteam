@@ -56,7 +56,7 @@ function Reviews() {
         reviews.push({
             name: name||"why no name",
             stars: radioValue||"1",
-            image: inputFile.files[0],
+            image: inputFile.files[0]||'default-photo.png',
             review: review|| "why no review"
         })
 

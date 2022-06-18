@@ -1,3 +1,77 @@
+#service-container{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3em;
+    height: 80vh;
+}
+
+#nothing{
+    grid-row: 2/4 ;
+    grid-column: 3/5;
+    transform: translateX(-50%);
+}
+
+#side-nav, #side-nav-loading{
+
+    grid-column: 1/2;
+    grid-row: 2/6;
+    position: relative;
+    padding: 1em 0;
+}
+
+.side-nav-ul{
+    display:flex;
+    flex-direction: column;
+    padding: 0;
+    border-right: 1px solid #c5c5c5;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+#side-nav-up{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    font-size: 1.25em;
+}
+#side-nav-down{
+    font-size: 1.25em;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+}
+
+.side-nav-ul::-webkit-scrollbar{
+    display: none;
+}
+
+.side-nav-ul li{
+    margin: 1em 0;
+    list-style: none;
+}
+.side-nav-ul li a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    width: 90%;
+}
+
+.side-nav-ul li.active{
+    list-style: inside;
+    font-weight: bold;
+}
+
 #category-navbar{
     display: flex;
     background-color: #eee;
@@ -7,11 +81,11 @@
     height: 3em;
     list-style: none;
     position: relative;
-    /* overflow: hidden; */
     justify-content: space-around;
     align-items: center;
     padding: 0;
-    margin: auto;
+    grid-column: 2/6;
+    grid-row: 1/2;
 }
 
 #category-navbar > .highlight{
@@ -62,8 +136,10 @@
 
 .pagination{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: baseline;
+    grid-column: 2/4;
+    grid-row: 2/3;
 }
 
 .pagination-btn{
@@ -73,4 +149,118 @@
     border: none;
     background-color: transparent;
     box-shadow: 1px 1px 11px 0px rgba(0, 0, 0, 0.15);
+}
+
+.pagination-btn:active{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+#service-img{
+    grid-column: 4/6;
+    grid-row: 2/5;
+    width: 20em;
+    height: 20em;
+}
+#service-btn{
+    grid-column: 2/4;
+    width: 15em;
+    height: 5em;
+    border: transparent;
+    border-radius: 10px ;
+    color: white;
+    background: linear-gradient(to bottom, #434343, #353535);
+}
+#service-btn:active{
+    background: linear-gradient(to bottom, #595959, #434343);
+
+}
+
+#service-title{
+    grid-column: 2/4;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+}
+#service-description{
+    grid-column:2/6; 
+    grid-row: 5/7;   
+}
+
+#accordionExample{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+#collapseOne{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    background-color: var(--bs-body-bg);
+}
+
+@media(max-width:1000px){
+    #service-container{
+        /* display: flex;
+        flex-direction: column;
+        height: auto; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(10,1fr);
+        height: auto;
+        gap: 1em;
+    }
+    #side-nav-loading{
+        grid-column: 1/2;
+        grid-row: 2/11;
+        margin: auto;
+    }
+    #category-navbar{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: auto;
+    }
+    
+    #side-nav{
+        height:fit-content;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: auto;
+    }
+    #service-img{
+        grid-column: 1/2;
+        grid-row: 3/6;
+        margin: auto;
+    }
+    #service-title{
+        grid-column: 1/2;
+        grid-row: 6/7;
+        margin: auto;
+    }
+    #service-description{
+        grid-column: 1/2;
+        grid-row: 7/8;
+        margin: auto;
+        text-align: center;
+    }
+    #service-btn{
+        grid-column: 1/2;
+        grid-row: 8/9;
+        margin: auto;
+    }
+    .pagination{
+        grid-column: 1/2;
+        grid-row: 9/10;
+        margin: auto;
+    }
+    #collapseOne{
+        width: 100%;
+    }
+    
+}
+
+@media(max-width:400px){
+    #category-navbar{
+        font-size: 12px;
+    }
 }

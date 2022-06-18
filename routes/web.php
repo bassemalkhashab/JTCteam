@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,18 +34,9 @@ Route::get('/about/get-reviews', [ReviewsController::class, 'getReviews']);
 
 Route::get('/about/customers', [CustomersController::class, 'displayAll']);
 
-Route::get('/service', function () {
-    return view('home');
-});
-Route::get('/service/residential', function () {
-    return view('home');
-});
-Route::get('/service/commercial', function () {
-    return view('home');
-});
-Route::get('/service/clothes', function () {
-    return view('home');
-});
+Route::get('/service',[ServiceController::class,'displayPage']);
+Route::get('/service/details',[ServiceController::class,'getServices']);
+
 Route::get('/market', function () {
     return view('home');
 });
