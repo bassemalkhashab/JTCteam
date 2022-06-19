@@ -8,9 +8,7 @@ function ServiceSideNav({serviceData, service, category, isPending }) {
     const [accorDiv, setAccorDiv] = useState(`accordion-collapse collapse`);
     const [accorBtn, setAccorBtn] = useState(`accordion-button collapsed`);
 
-    function toggleAccordion(){
-        
-    }
+
 
     useEffect(()=>{
 
@@ -36,29 +34,18 @@ function ServiceSideNav({serviceData, service, category, isPending }) {
     else{
         return (serviceData&&(
 
-            
-
-            <div className="accordion" id="accordionExample">
-                <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingOne">
-                    <button className={accorBtn}  type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Services
-                    </button>
-                    </h2>
-                    <div id="collapseOne" className={accorDiv} aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div className="accordion-body">
-                        <ul className='side-nav-ul'>
-                            {
-                            serviceData.map((Service, index)=>{
-                            return (<li className={index == service-1?'active':""} key={index}><Link onClick={toggleAccordion} to={`/service?category=${category}&service=${index+1}`} value={index}>{Service.header} </Link></li>)
-                            })
-                            }
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+            <div id="accordionExample">
+                <button onClick={()=>setClosed(!closed)} className={closed?"":"show"}>{serviceData[service-1].header} <i className="fa-solid fa-chevron-down"></i></button>
+                <ul id="collapseOne" className='side-nav-ul'>
+                {
+                    serviceData.map((Service, index)=>{
+                    return (<li className={index == service-1?'active':""} key={index}><Link onClick={()=>setClosed(!closed)} to={`/service?category=${category}&service=${index+1}`}> {Service.header}</Link></li>)
+                    })
+                }
+                
+                </ul>
             </div>
-            )
+            )||(!isPending&&<h3 id='nothing'>Nothing to show</h3>)
         )
     }
 }

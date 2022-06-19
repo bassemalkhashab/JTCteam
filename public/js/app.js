@@ -7243,8 +7243,6 @@ function ServiceSideNav(_ref) {
       accorBtn = _useState6[0],
       setAccorBtn = _useState6[1];
 
-  function toggleAccordion() {}
-
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {}, []);
 
   if (window.innerWidth > 1000) {
@@ -7284,47 +7282,35 @@ function ServiceSideNav(_ref) {
       children: "Nothing to show"
     });
   } else {
-    return serviceData && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "accordion",
+    return serviceData && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       id: "accordionExample",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "accordion-item",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          className: "accordion-header",
-          id: "headingOne",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-            className: accorBtn,
-            type: "button",
-            "data-bs-toggle": "collapse",
-            "data-bs-target": "#collapseOne",
-            "aria-expanded": "true",
-            "aria-controls": "collapseOne",
-            children: "Services"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          id: "collapseOne",
-          className: accorDiv,
-          "aria-labelledby": "headingOne",
-          "data-bs-parent": "#accordionExample",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "accordion-body",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-              className: "side-nav-ul",
-              children: serviceData.map(function (Service, index) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                  className: index == service - 1 ? 'active' : "",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                    onClick: toggleAccordion,
-                    to: "/service?category=".concat(category, "&service=").concat(index + 1),
-                    value: index,
-                    children: [Service.header, " "]
-                  })
-                }, index);
-              })
-            })
-          })
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+        onClick: function onClick() {
+          return setClosed(!closed);
+        },
+        className: closed ? "" : "show",
+        children: [serviceData[service - 1].header, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "fa-solid fa-chevron-down"
         })]
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+        id: "collapseOne",
+        className: "side-nav-ul",
+        children: serviceData.map(function (Service, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+            className: index == service - 1 ? 'active' : "",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+              onClick: function onClick() {
+                return setClosed(!closed);
+              },
+              to: "/service?category=".concat(category, "&service=").concat(index + 1),
+              children: [" ", Service.header]
+            })
+          }, index);
+        })
+      })]
+    }) || !isPending && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+      id: "nothing",
+      children: "Nothing to show"
     });
   }
 }
