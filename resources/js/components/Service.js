@@ -9,7 +9,7 @@ function Service() {
   let urlParams = new URLSearchParams(window.location.search);
 
   const history = useHistory() 
-  const [category ,setCategory]= useState(urlParams.get('category')||'residential');
+  const [category ,setCategory]= useState(urlParams.get('category')||'clothes');
   const [service ,setService]= useState(urlParams.get('service')||"1");
   const [totalPages, setTotalPages]=useState("1");
   const [serviceData, setServiceData]= useState(null);
@@ -31,9 +31,9 @@ function Service() {
     <>
     <div className="container" id='service-container'>
         <ul id="category-navbar">
-            <li className={category == 'residential'?'active':""}><Link to="/service?category=residential&service=1">Residential</Link></li>
-            <li className={category == 'commercial'?'active':""}><Link to="/service?category=commercial&service=1">Commercial</Link></li>
             <li className={category == 'clothes'?'active':""}><Link to="/service?category=clothes&service=1">Clothes</Link></li>
+            <li className={category == 'commercial'?'active':""}><Link to="/service?category=commercial&service=1">Commercial</Link></li>
+            <li className={category == 'residential'?'active':""}><Link to="/service?category=residential&service=1">Residential</Link></li>
             <div className={`highlight ${category}`}></div>
         </ul>
 

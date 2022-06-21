@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Service from "./components/Service";
+import Contact from "./components/Contact";
 
 function App() {
     return (
@@ -26,9 +27,7 @@ function App() {
                         <Service/>
                     </Route>
                     <Route path="/contact">
-                        <div>
-                            <h1>Contact</h1>
-                        </div>
+                        <Contact/>
                     </Route>
                     <Route path="/market">
                         <div>

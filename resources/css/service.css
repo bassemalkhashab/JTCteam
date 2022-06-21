@@ -3,7 +3,8 @@
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(5, 1fr);
     gap: 3em;
-    height: 80vh;
+    /* height: 80vh; */
+    /* padding: 3em 0; */
 }
 
 
@@ -98,10 +99,10 @@
     border-radius:  25em;
 }
 
-#category-navbar > .highlight.residential{
+#category-navbar > .highlight.clothes{
     left: 0;
 }
-#category-navbar > .highlight.clothes{
+#category-navbar > .highlight.residential{
     left: 100%;
     transform: translateX(-100%);
 }
@@ -145,6 +146,7 @@
 .pagination-btn{
     width: 4em;
     height: 4em;
+    color: black;
     border-radius: 50%;
     border: none;
     background-color: transparent;
@@ -166,21 +168,38 @@
     width: 15em;
     height: 5em;
     border: transparent;
-    border-radius: 10px ;
+    border-radius: 5em ;
     color: white;
+    transition: all 0.3s ease;
     background: linear-gradient(to bottom, #434343, #353535);
 }
 #service-btn:active{
     background: linear-gradient(to bottom, #595959, #434343);
+}
 
+
+#add-to-list{
+    grid-column:2/3; 
+    grid-row: 5/6;  
+    width: 15em;
+    height: 5em;
+}
+#amount{
+    grid-column:3/4; 
+    grid-row: 5/6;  
+    align-self: center;
+    margin: 0;
+    font-size: large;
 }
 
 #service-title{
     grid-column: 2/4;
     margin: 0;
     display: flex;
-    align-items: flex-end;
 }
+
+
+
 #service-description{
     grid-column:2/6; 
     grid-row: 5/7;   
@@ -230,6 +249,17 @@
     padding: 1em;
 }
 
+#amount input{
+    width: 3em;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+#amount button{
+    font-size: 1.5em;
+    padding: 0 1em ;
+}
+
 @media(max-width:1000px){
     #service-container{
         /* display: flex;
@@ -237,7 +267,7 @@
         height: auto; */
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: repeat(10,1fr);
+        grid-template-rows: repeat(11,1fr);
         height: auto;
         gap: 1em;
     }
@@ -268,6 +298,17 @@
         grid-row: 6/7;
         margin: auto;
     }
+    #amount{
+        grid-column: 1/2;
+        grid-row: 7/8;
+        margin: auto;
+    }
+    #add-to-list{
+        
+        grid-column: 1/2;
+        grid-row: 8/9;
+        margin: auto;
+    }
     #service-description{
         grid-column: 1/2;
         grid-row: 7/8;
@@ -276,12 +317,12 @@
     }
     #service-btn{
         grid-column: 1/2;
-        grid-row: 8/9;
+        grid-row: 9/10;
         margin: auto;
     }
     .pagination{
         grid-column: 1/2;
-        grid-row: 9/10;
+        grid-row: 10/11;
         margin: auto;
     }
     #collapseOne{

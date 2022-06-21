@@ -19,5 +19,6 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/footer.css', 'public/css')
     .postCss('resources/css/about.css', 'public/css')
     .postCss('resources/css/service.css', 'public/css')
+    .postCss('resources/css/contact.css', 'public/css')
     .postCss('resources/css/reviews.css', 'public/css')
     ;

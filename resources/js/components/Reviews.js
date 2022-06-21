@@ -81,6 +81,7 @@ function Reviews() {
     return reviews&&photos&&(
         <>
             <div id="form-body">
+                <button onClick={()=>document.querySelector('#form-body').style.display='none'} id="close-btn-2"></button>
                 <Form
                     className="container"
                     id="review-form"

@@ -43,17 +43,17 @@ function Home() {
             <h5>Professional and experienced cleaning service that delivers the results you expect. We pride ourselves on providing reliable, fast and detailed results.</h5>
             <Link to="/about"><button className='btn-style-1'>Learn more</button></Link>
             <div className="d-flex justify-content-between mt-5 pt-5" id='options'>
-                <Link onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} to='/service?category=residential' className="option">
-                    <img src="/storage/sofa.png" alt="Sofa" height={300} />
-                    <h5>Residential</h5>
+                <Link onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} to='/service?category=clothes' className="option">
+                    <img src="/storage/clothes.png" alt="Sofa" height={300} />
+                    <h5>Clothes</h5>
                 </Link>
                 <Link onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} to='/service?category=commercial' className="option">
                     <img src="/storage/plate.png" alt="Sofa" height={300}/>
                     <h5>Commercial</h5>
                 </Link>
-                <Link onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} to='/service?category=clothes' className="option">
-                    <img src="/storage/clothes.png" alt="Sofa" height={300} />
-                    <h5>Clothes</h5>
+                <Link onClick={()=>window.scrollTo({ top: 0, behavior: 'smooth' })} to='/service?category=residential' className="option">
+                    <img src="/storage/sofa.png" alt="Sofa" height={300} />
+                    <h5>Residential</h5>
                 </Link>
             </div>
       </div>
