@@ -1,44 +1,64 @@
 #service-container{
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 3em;
-    /* height: 80vh; */
-    /* padding: 3em 0; */
+    padding: 0 !important;
+    border-radius: 50px;
 }
 
 
 #nothing{
-    grid-row: 2/4 ;
-    grid-column: 3/5;
-    transform: translateX(-50%);
+    grid-row: 3/7 ;
+    grid-column: 2/4;
+    /* transform: translateX(-50%); */
 }
 
-#side-nav, #side-nav-loading{
+ #side-nav-loading{
 
     grid-column: 1/2;
     grid-row: 2/6;
-    position: relative;
     padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#total{
+    margin: auto auto auto 0;
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
+
+#side-nav{
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 1/8;
+    background-color: #eee;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .side-nav-ul{
     display:flex;
     flex-direction: column;
     padding: 0;
-    border-right: 1px solid #c5c5c5;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    height: 100%;
+    height: 50%;
+    width: 60%;
     scroll-behavior: smooth;
 }
 
 #side-nav-up{
     position: absolute;
-    top: 0;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%,-100%);
+    transform: translate(-50%,-200%);
     z-index: 1;
     border: none;
     background-color: transparent;
@@ -49,9 +69,9 @@
     border: none;
     background-color: transparent;
     position: absolute;
-    bottom: 0;
+    bottom: 25%;
     left: 50%;
-    transform: translate(-50%,100%);
+    transform: translate(-50%,200%);
 }
 
 .side-nav-ul::-webkit-scrollbar{
@@ -59,7 +79,7 @@
 }
 
 .side-nav-ul li{
-    margin: 1em 0;
+    padding: 1em ;
     list-style: none;
 }
 .side-nav-ul li a{
@@ -71,6 +91,8 @@
 .side-nav-ul li.active{
     list-style: inside;
     font-weight: bold;
+    border-radius: 50px;
+    background-color: var(--bs-body-bg);
 }
 
 #category-navbar{
@@ -79,19 +101,19 @@
     border-radius:  25em;
     max-width: 40em;
     width: 100%;
-    height: 3em;
+    height: 4em;
     list-style: none;
     position: relative;
     justify-content: space-around;
     align-items: center;
+    grid-column: 2/4;
+    grid-row: 2/3;
     padding: 0;
-    grid-column: 2/6;
-    grid-row: 1/2;
 }
 
 #category-navbar > .highlight{
     position: absolute;
-    height: 100%;
+    height: 80%;
     width: 33.33%;
     background: linear-gradient(to bottom, #32717E, #1F4C61);
     z-index: 1;
@@ -100,10 +122,10 @@
 }
 
 #category-navbar > .highlight.clothes{
-    left: 0;
+    left: 1%;
 }
 #category-navbar > .highlight.residential{
-    left: 100%;
+    left: 99%;
     transform: translateX(-100%);
 }
 #category-navbar > .highlight.commercial{
@@ -139,8 +161,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-    grid-column: 2/4;
-    grid-row: 2/3;
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
 
 .pagination-btn{
@@ -158,13 +180,21 @@
 }
 
 #service-img{
-    grid-column: 4/6;
-    grid-row: 2/5;
+    /* grid-column: 4/6; */
+    grid-row: 3/6;
     width: 20em;
     height: 20em;
+    /* border-radius: 50px; */
 }
+
+#service-img img{
+    width: 100%;
+    height: 100%;
+}
+
 #service-btn{
-    grid-column: 2/4;
+    grid-column: 2/3;
+    grid-row: 4/5;
     width: 15em;
     height: 5em;
     border: transparent;
@@ -185,15 +215,21 @@
     height: 5em;
 }
 #amount{
-    grid-column:3/4; 
-    grid-row: 5/6;  
+    /* grid-column:3/4;  */
+    grid-row: 6/7;  
     align-self: center;
     margin: 0;
     font-size: large;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    box-shadow: 1px 1px 11px 0px rgba(0, 0, 0, 0.15) !important;
+    margin:0 !important
 }
 
 #service-title{
-    grid-column: 2/4;
+    grid-column: 2/3;
+    grid-row: 5/6;
     margin: 0;
     display: flex;
 }
@@ -201,8 +237,9 @@
 
 
 #service-description{
-    grid-column:2/6; 
-    grid-row: 5/7;   
+    grid-column:2/4; 
+    grid-row: 6/8;   
+    margin-right: 3em;
 }
 
 #accordionExample{
@@ -254,6 +291,9 @@
     border: none;
     border-radius: 5px;
     text-align: center;
+    background-color: transparent;
+    outline: none;
+
 }
 #amount button{
     font-size: 1.5em;
@@ -270,6 +310,8 @@
         grid-template-rows: repeat(11,1fr);
         height: auto;
         gap: 1em;
+        border-radius: 0;
+        box-shadow: none !important;
     }
     #side-nav-loading{
         grid-column: 1/2;
@@ -279,6 +321,7 @@
     #category-navbar{
         grid-column: 1/2;
         grid-row: 1/2;
+        width: 90%;
         margin: auto;
     }
     
@@ -303,9 +346,9 @@
     #amount{
         grid-column: 1/2;
         grid-row: 7/8;
-        margin: auto;
+        margin: auto !important;
     }
-    #add-to-list{
+    #total{
         
         grid-column: 1/2;
         grid-row: 8/9;

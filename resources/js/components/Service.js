@@ -29,7 +29,7 @@ function Service() {
        
   return (
     <>
-    <div className="container" id='service-container'>
+    <div className="container shadow mb-5 overflow-hidden bg-body" id='service-container'>
         <ul id="category-navbar">
             <li className={category == 'clothes'?'active':""}><Link to="/service?category=clothes&service=1">Clothes</Link></li>
             <li className={category == 'commercial'?'active':""}><Link to="/service?category=commercial&service=1">Commercial</Link></li>
