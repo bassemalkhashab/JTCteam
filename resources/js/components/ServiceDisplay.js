@@ -1,16 +1,16 @@
 import { Button } from 'bootstrap';
 import React, {useState, useEffect} from 'react';
 import Cookies from 'js-cookie';
+import {Link} from 'react-router-dom'
 
-function ServiceDisplay({setServiceData, setTotalPages,category, service, setIsPending}) {
+function ServiceDisplay({urlParams ,setServiceData, setTotalPages,category, service, setIsPending}) {
     
     const [serviceHeader, setServiceHeader]=useState("");
     const [serviceDescription, setServiceDescription]=useState("");
     const [image, setImage]=useState("");
-    const [price, setPrice] = useState(null);
+    const [price, setPrice] = useState(0);
     const [amount, setAmount] =useState(0);
-    const [list, setList] = useState([{service:parseInt(service), amount:parseInt(amount), cloth:serviceHeader, price:parseInt(price)}]);
-    const [serviceState, setServiceState] = useState(service);
+    const [list, setList] = useState(category == 'clothes'?[{service:parseInt(service), amount:parseInt(amount), cloth:serviceHeader, price:parseInt(price)}]:[]);
     const [total, setTotal] = useState(0);
     const [fetchingData, setFetchingData] = useState(false);
     
@@ -43,14 +43,14 @@ function ServiceDisplay({setServiceData, setTotalPages,category, service, setIsP
             setServiceHeader("");
             setServiceDescription("");
             setImage("");
-            setPrice(null);
+            setPrice(0);
             setServiceData(null);
             }
         })
         .then(()=>{
           
                 // remember the amount of clothes by fetching it from the array                    
-                        
+                        if (category == 'clothes'){
                         let modified =false;
                         list.map((value, index)=>{
                             if(parseInt(value.service) == service){
@@ -60,12 +60,12 @@ function ServiceDisplay({setServiceData, setTotalPages,category, service, setIsP
                         })
                         if (!modified){
                             setAmount(0);
-                            setList(list=>[...list, {service:parseInt(service), amount:parseInt(amount), cloth:serviceHeader, price:parseInt(price)}])
+                            // setList(list=>[...list, {service:parseInt(service), amount:amount, cloth:serviceHeader, price:parseInt(price)}])
                         }
                         // console.log(service)
                     calculateTotal();  
                     setFetchingData(false);
-                    
+                    }
         })
         .catch((err) => {
             setIsPending(false);
@@ -78,37 +78,46 @@ function ServiceDisplay({setServiceData, setTotalPages,category, service, setIsP
 
     useEffect(()=>{
 
+        if (category == 'clothes'){
         if (!fetchingData){
             // Modify the array of clothes list and its information
             if( parseInt(amount)>=0){
-                
+                let modified = false;
                 list.map((value, index)=>{
                     if(value.service == service){
                         value.amount = parseInt(amount);
                         // value.service= parseInt(service);
-                        value.price = parseInt(price)||0;
+                        value.price = parseInt(price);
                         value.cloth = serviceHeader;
+                        modified =true;
                     }
                     
                 })
+                if (!modified){
+                    setList(list=>[...list, {service:parseInt(service), amount:amount, cloth:serviceHeader, price:parseInt(price)}])
+                }
                 
             }
     
             calculateTotal();
+            }
         }
     }, [amount])
 
     useEffect(()=>{  
+        if (category == 'clothes'){
         Cookies.set("list", JSON.stringify(list))
         let data =Cookies.get("list")
-        console.log(data)
+        // console.log(data)
+        calculateTotal();
         // console.log(JSON.parse(data))
+        }
     }, [list, amount])
 
   return (
     <>
         {image&& <div id='service-img' className='shadow-sm p-3 mb-5 bg-body rounded'><img src={`/storage/${image}`} alt="" /></div>}
-        {serviceHeader&&<button id='service-btn'>Quotation</button>}
+        {serviceHeader&&<Link to={`/contact?${category== 'clothes'?urlParams+'&list=true':urlParams}`} id='service-btn'>Quotation</Link>}
         {serviceHeader&&<div id='service-title' className='d-flex flex-column justify-content-between'><h3>{serviceHeader}</h3>{price&&<h5 id="cost" className='m-0'>Cost: ${price}</h5>}</div>}
         {serviceDescription&&<p id='service-description'>{serviceDescription}</p>}
         {category == "clothes"? price&&(<> <div id="amount" className='d-flex shadow p-3 mb-5 bg-body rounded-pill'><button onClick={()=>{parseInt(amount)>0?setAmount(amount-1):setAmount(0)}} className="btn btn-light">-</button> <input type="text" value={amount} onChange={(e)=>setAmount(e.target.value)} /> <button className="btn btn-light"  onClick={()=>{parseInt(amount)>=0?setAmount(amount+1):setAmount(0)}} >+</button></div> <h3 id="total">Total: ${total}</h3></>) : null}

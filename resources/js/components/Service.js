@@ -11,6 +11,7 @@ function Service() {
   const history = useHistory() 
   const [category ,setCategory]= useState(urlParams.get('category')||'clothes');
   const [service ,setService]= useState(urlParams.get('service')||"1");
+  const [cloth ,setCloth]= useState(urlParams.get('service')||'1');
   const [totalPages, setTotalPages]=useState("1");
   const [serviceData, setServiceData]= useState(null);
   const [isPending, setIsPending] = useState(true);
@@ -31,7 +32,7 @@ function Service() {
     <>
     <div className="container shadow mb-5 overflow-hidden bg-body" id='service-container'>
         <ul id="category-navbar">
-            <li className={category == 'clothes'?'active':""}><Link to="/service?category=clothes&service=1">Clothes</Link></li>
+            <li className={category == 'clothes'?'active':""}><Link to={"/service?category=clothes&service="+cloth}>Clothes</Link></li>
             <li className={category == 'commercial'?'active':""}><Link to="/service?category=commercial&service=1">Commercial</Link></li>
             <li className={category == 'residential'?'active':""}><Link to="/service?category=residential&service=1">Residential</Link></li>
             <div className={`highlight ${category}`}></div>
@@ -61,7 +62,7 @@ function Service() {
 
         <ServiceSideNav isPending={isPending} serviceData={serviceData} service={service} category={category} />
         {isPending&&<MyLoader/>}
-        <ServiceDisplay setIsPending={setIsPending} setServiceData={setServiceData} setTotalPages={setTotalPages} category={category} service={service} />
+        <ServiceDisplay urlParams={urlParams} setIsPending={setIsPending} setServiceData={setServiceData} setTotalPages={setTotalPages} category={category} service={service} />
         
         
     </div>

@@ -5770,9 +5770,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
 
 
 
@@ -5780,169 +5796,395 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Contact() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      id: "contact-layout",
-      className: "container d-flex justify-content-evenly align-items-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h4", {
-        className: "",
-        id: "contact-details",
-        children: ["Contact us on ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          href: "tel:+1 226 884 4911",
-          children: "+1 226 884 4911"
-        }), " or fill out the form so we can reach you out as soon as possible"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-        id: "contact-form",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form a",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "fname",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "fname",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "First Name"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form b",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "lname",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "lname",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Last Name"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form c",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "email",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "email",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Email"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form d",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "tel",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "tel",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Phone Number (In Canada)"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form e",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "address-level1",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "address-level1",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Address 1"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form f",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "address-level2",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "address-level2",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Address 2"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form g",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "postal-code",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "postal-code",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Zipcode"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form h",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "unit-number",
-            autoComplete: "off",
-            required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            htmlFor: "unit-number",
-            className: "label-name",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "content-name",
-              children: "Unit Number"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "form i",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
-            name: "service",
-            id: "select-service",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
-              value: "none",
-              defaultValue: true,
-              children: "Service"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
-              value: "Residential",
-              children: "Residential"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
-              value: "Commercial",
-              children: "Commercial"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
-              value: "Clothes",
-              children: "Clothes"
+  var urlParams = new URLSearchParams(window.location.search);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(urlParams.get('list') == 'true' ? JSON.parse(js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].get('list')) : null),
+      _useState2 = _slicedToArray(_useState, 2),
+      list = _useState2[0],
+      setList = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(urlParams.get('category')),
+      _useState4 = _slicedToArray(_useState3, 2),
+      category = _useState4[0],
+      setCategory = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(urlParams.get('service')),
+      _useState6 = _slicedToArray(_useState5, 2),
+      service = _useState6[0],
+      setService = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      scrollList = _useState8[0],
+      setScrollList = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      fname = _useState10[0],
+      setFname = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      lname = _useState12[0],
+      setLname = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState14 = _slicedToArray(_useState13, 2),
+      email = _useState14[0],
+      setEmail = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState16 = _slicedToArray(_useState15, 2),
+      phone = _useState16[0],
+      setPhone = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState18 = _slicedToArray(_useState17, 2),
+      address1 = _useState18[0],
+      setAddress1 = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState20 = _slicedToArray(_useState19, 2),
+      address2 = _useState20[0],
+      setAddress2 = _useState20[1];
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState22 = _slicedToArray(_useState21, 2),
+      postalCode = _useState22[0],
+      setPostalCode = _useState22[1];
+
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState24 = _slicedToArray(_useState23, 2),
+      unit = _useState24[0],
+      setUnit = _useState24[1];
+
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState26 = _slicedToArray(_useState25, 2),
+      serviceData = _useState26[0],
+      setServiceData = _useState26[1];
+
+  function submitRequest() {
+    var data = {
+      category: category,
+      service: service,
+      list: list,
+      fname: fname,
+      lname: lname,
+      email: email,
+      phone: phone,
+      address1: address1,
+      address2: address2,
+      postalCode: postalCode,
+      unit: unit
+    }; // console.log(data)
+
+    fetch("/contact", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(function (res) {
+      res.json();
+    }).then(function (data) {
+      console.log(data);
+    })["catch"](function (err) {
+      return console.error(err);
+    });
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetch("/service/details?category=commercial&service=service").then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      setServiceData(data); // console.log(data);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "background",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        id: "contact-layout",
+        className: "container d-flex justify-content-evenly align-items-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "h5 shadow-sm p-3 mb-5 bg-body rounded",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
+            id: "contact-details",
+            className: "border border-dark p-3 m-0",
+            children: ["  You can fill out the form so we can reach you out as soon as possible or Contact us on: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              className: "fa-solid fa-phone"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              href: "tel:+1 226 884 4911",
+              children: "+1 226 884 4911"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              className: "fa-solid fa-envelope"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              href: "mailto:info@jtcteam.ca",
+              className: "mb-0",
+              children: "info@jtcteam.ca"
+            }), " "]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+          id: "form",
+          onSubmit: function onSubmit(e) {
+            e.preventDefault();
+            submitRequest();
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            id: "form-scroll",
+            className: scrollList ? 'scroll' : '',
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              id: "contact-form",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form a",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "fname",
+                  autoComplete: "off",
+                  value: fname,
+                  onChange: function onChange(e) {
+                    return setFname(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "fname",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "First Name"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form b",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "lname",
+                  autoComplete: "off",
+                  value: lname,
+                  onChange: function onChange(e) {
+                    return setLname(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "lname",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Last Name"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form c",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "email",
+                  autoComplete: "off",
+                  value: email,
+                  onChange: function onChange(e) {
+                    return setEmail(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "email",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Email"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form d",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "tel",
+                  autoComplete: "off",
+                  value: phone,
+                  onChange: function onChange(e) {
+                    return setPhone(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "tel",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Phone Number (In Canada)"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form e",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "address-level1",
+                  autoComplete: "off",
+                  value: address1,
+                  onChange: function onChange(e) {
+                    return setAddress1(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "address-level1",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Address 1"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form f",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "address-level2",
+                  autoComplete: "off",
+                  value: address2,
+                  onChange: function onChange(e) {
+                    return setAddress2(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "address-level2",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Address 2"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form g",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "postal-code",
+                  autoComplete: "off",
+                  value: postalCode,
+                  onChange: function onChange(e) {
+                    return setPostalCode(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "postal-code",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Zipcode"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "form h",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+                  type: "text",
+                  name: "unit-number",
+                  autoComplete: "off",
+                  value: unit,
+                  onChange: function onChange(e) {
+                    return setUnit(e.target.value);
+                  },
+                  required: true
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+                  htmlFor: "unit-number",
+                  className: "label-name",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                    className: "content-name",
+                    children: "Unit Number"
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "form i",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+                  name: "category",
+                  id: "select-category",
+                  onChange: function onChange(e) {
+                    return setCategory(e.target.value);
+                  },
+                  defaultValue: category,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                    value: "none",
+                    children: " Category"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                    value: "residential",
+                    children: "Residential"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                    value: "commercial",
+                    children: "Commercial"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                    value: "clothes",
+                    children: "Clothes"
+                  })]
+                })
+              }), category != 'clothes' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "form k",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+                  name: "service",
+                  id: "select-service",
+                  onChange: function onChange(e) {
+                    return setService(e.target.value);
+                  },
+                  defaultValue: service,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                    value: "none",
+                    children: " Service"
+                  }), serviceData.filter(function (service) {
+                    return service.category == category;
+                  }).map(function (value, index) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+                      value: value.header,
+                      children: value.header
+                    }, index);
+                  })]
+                })
+              }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "form j",
+                children: category == 'clothes' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  className: "btn btn-primary",
+                  onClick: function onClick(e) {
+                    e.preventDefault();
+                    setScrollList(true);
+                  },
+                  children: "Next"
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  type: "submit",
+                  className: "btn btn-primary",
+                  children: "Submit your request"
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "p-5 d-flex flex-column align-items-center justify-content-between",
+              id: "service-list",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+                className: "list-group w-100",
+                id: "form2",
+                children: list && list.map(function (value, index) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+                    className: "list-group-item d-flex justify-content-between align-items-center",
+                    children: [value.cloth, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                      className: "badge bg-primary rounded-pill",
+                      children: value.amount
+                    })]
+                  }, index);
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "w-100",
+                id: "form-control-btns",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  className: "btn btn-secondary w-100 mt-2",
+                  onClick: function onClick(e) {
+                    e.preventDefault();
+                    setScrollList(false);
+                  },
+                  children: "Back"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  onClick: function onClick() {
+                    setScrollList(false);
+                  },
+                  type: "submit",
+                  className: "btn btn-primary w-100 mt-2",
+                  children: "Submit your request"
+                })]
+              })]
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "form j",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-            type: "submit",
-            className: "btn btn-primary",
-            children: "Submit your request"
-          })
         })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    })
   });
 }
 
@@ -7186,20 +7428,25 @@ function Service() {
       service = _useState4[0],
       setService = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("1"),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(urlParams.get('service') || '1'),
       _useState6 = _slicedToArray(_useState5, 2),
-      totalPages = _useState6[0],
-      setTotalPages = _useState6[1];
+      cloth = _useState6[0],
+      setCloth = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("1"),
       _useState8 = _slicedToArray(_useState7, 2),
-      serviceData = _useState8[0],
-      setServiceData = _useState8[1];
+      totalPages = _useState8[0],
+      setTotalPages = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState10 = _slicedToArray(_useState9, 2),
-      isPending = _useState10[0],
-      setIsPending = _useState10[1];
+      serviceData = _useState10[0],
+      setServiceData = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState12 = _slicedToArray(_useState11, 2),
+      isPending = _useState12[0],
+      setIsPending = _useState12[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     history.push({
@@ -7221,7 +7468,7 @@ function Service() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
           className: category == 'clothes' ? 'active' : "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-            to: "/service?category=clothes&service=1",
+            to: "/service?category=clothes&service=" + cloth,
             children: "Clothes"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
@@ -7273,6 +7520,7 @@ function Service() {
         service: service,
         category: category
       }), isPending && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_MyLoader__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ServiceDisplay__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        urlParams: urlParams,
         setIsPending: setIsPending,
         setServiceData: setServiceData,
         setTotalPages: setTotalPages,
@@ -7301,6 +7549,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -7329,8 +7578,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function ServiceDisplay(_ref) {
-  var setServiceData = _ref.setServiceData,
+  var urlParams = _ref.urlParams,
+      setServiceData = _ref.setServiceData,
       setTotalPages = _ref.setTotalPages,
       category = _ref.category,
       service = _ref.service,
@@ -7351,7 +7602,7 @@ function ServiceDisplay(_ref) {
       image = _useState6[0],
       setImage = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
       price = _useState8[0],
       setPrice = _useState8[1];
@@ -7361,30 +7612,25 @@ function ServiceDisplay(_ref) {
       amount = _useState10[0],
       setAmount = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([{
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(category == 'clothes' ? [{
     service: parseInt(service),
     amount: parseInt(amount),
     cloth: serviceHeader,
     price: parseInt(price)
-  }]),
+  }] : []),
       _useState12 = _slicedToArray(_useState11, 2),
       list = _useState12[0],
       setList = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(service),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState14 = _slicedToArray(_useState13, 2),
-      serviceState = _useState14[0],
-      setServiceState = _useState14[1];
+      total = _useState14[0],
+      setTotal = _useState14[1];
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState16 = _slicedToArray(_useState15, 2),
-      total = _useState16[0],
-      setTotal = _useState16[1];
-
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState18 = _slicedToArray(_useState17, 2),
-      fetchingData = _useState18[0],
-      setFetchingData = _useState18[1];
+      fetchingData = _useState16[0],
+      setFetchingData = _useState16[1];
 
   function calculateTotal() {
     var sum = 0;
@@ -7413,60 +7659,72 @@ function ServiceDisplay(_ref) {
         setServiceHeader("");
         setServiceDescription("");
         setImage("");
-        setPrice(null);
+        setPrice(0);
         setServiceData(null);
       }
     }).then(function () {
       // remember the amount of clothes by fetching it from the array                    
-      var modified = false;
-      list.map(function (value, index) {
-        if (parseInt(value.service) == service) {
-          setAmount(parseInt(value.amount));
-          modified = true;
-        }
-      });
-
-      if (!modified) {
-        setAmount(0);
-        setList(function (list) {
-          return [].concat(_toConsumableArray(list), [{
-            service: parseInt(service),
-            amount: parseInt(amount),
-            cloth: serviceHeader,
-            price: parseInt(price)
-          }]);
+      if (category == 'clothes') {
+        var modified = false;
+        list.map(function (value, index) {
+          if (parseInt(value.service) == service) {
+            setAmount(parseInt(value.amount));
+            modified = true;
+          }
         });
-      } // console.log(service)
+
+        if (!modified) {
+          setAmount(0); // setList(list=>[...list, {service:parseInt(service), amount:amount, cloth:serviceHeader, price:parseInt(price)}])
+        } // console.log(service)
 
 
-      calculateTotal();
-      setFetchingData(false);
+        calculateTotal();
+        setFetchingData(false);
+      }
     })["catch"](function (err) {
       setIsPending(false);
       console.error(err);
     });
   }, [category, service]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (!fetchingData) {
-      // Modify the array of clothes list and its information
-      if (parseInt(amount) >= 0) {
-        list.map(function (value, index) {
-          if (value.service == service) {
-            value.amount = parseInt(amount); // value.service= parseInt(service);
+    if (category == 'clothes') {
+      if (!fetchingData) {
+        // Modify the array of clothes list and its information
+        if (parseInt(amount) >= 0) {
+          var modified = false;
+          list.map(function (value, index) {
+            if (value.service == service) {
+              value.amount = parseInt(amount); // value.service= parseInt(service);
 
-            value.price = parseInt(price) || 0;
-            value.cloth = serviceHeader;
+              value.price = parseInt(price);
+              value.cloth = serviceHeader;
+              modified = true;
+            }
+          });
+
+          if (!modified) {
+            setList(function (list) {
+              return [].concat(_toConsumableArray(list), [{
+                service: parseInt(service),
+                amount: amount,
+                cloth: serviceHeader,
+                price: parseInt(price)
+              }]);
+            });
           }
-        });
-      }
+        }
 
-      calculateTotal();
+        calculateTotal();
+      }
     }
   }, [amount]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    js_cookie__WEBPACK_IMPORTED_MODULE_2__["default"].set("list", JSON.stringify(list));
-    var data = js_cookie__WEBPACK_IMPORTED_MODULE_2__["default"].get("list");
-    console.log(data); // console.log(JSON.parse(data))
+    if (category == 'clothes') {
+      js_cookie__WEBPACK_IMPORTED_MODULE_2__["default"].set("list", JSON.stringify(list));
+      var data = js_cookie__WEBPACK_IMPORTED_MODULE_2__["default"].get("list"); // console.log(data)
+
+      calculateTotal(); // console.log(JSON.parse(data))
+    }
   }, [list, amount]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -7476,7 +7734,8 @@ function ServiceDisplay(_ref) {
         src: "/storage/".concat(image),
         alt: ""
       })
-    }), serviceHeader && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+    }), serviceHeader && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+      to: "/contact?".concat(category == 'clothes' ? urlParams + '&list=true' : urlParams),
       id: "service-btn",
       children: "Quotation"
     }), serviceHeader && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

@@ -1,3 +1,12 @@
+.background{
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cfdef381, #e0eafc77);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cfdef366, #e0eafc6e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    height: 80vh;
+    z-index: -1000;
+}
+
 #contact-form{
     display: grid;
     grid-template-areas: "a b"
@@ -6,13 +15,14 @@
                          "e e"
                          "f f"
                          "g h"
-                         "i i"
+                         "i k"
                          "j j"
     ;
     gap: 1em;
-    max-width: 35em;
+    width: 100%;
     /* margin: auto; */
     padding: 3em;
+    /* position: absolute; */
 }
 
 #contact-details{
@@ -62,6 +72,9 @@
 #contact-form .j{
     grid-area: j;
 }
+#contact-form .k{
+    grid-area: k;
+}
  
 .form{
     position: relative;
@@ -71,7 +84,7 @@
     width: 100%;
 }
 
-.form.i #select-service{
+.form.i #select-category, .form.k #select-service {
     height: 35px;
     position: absolute;
     bottom: 0;
@@ -139,8 +152,44 @@
     transform: translateX(0%);
 }
 
+#form{
+    max-width: 35em;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 80vh;
+}
+
+#form-scroll{
+    position: absolute;
+    display: flex;
+    width: 200%;
+    left: 0;
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
+}
+#form-scroll.scroll{
+    transform: translateX(-50%);
+}
+
+#service-list{
+    width: 100%;
+}
+#contact-layout .h5{
+    background-color: var(--bs-body-bg);
+}
+
 @media (max-width:1000px){
+    .background{
+        height: 120vh;
+    }
     #contact-layout{
         flex-direction: column;
+    }
+    #contact-form{
+        padding: 0;
+    }
+    #service-list{
+        padding: 0 1em !important;
     }
 }

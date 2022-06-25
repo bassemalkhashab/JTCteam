@@ -200,6 +200,10 @@
     border: transparent;
     border-radius: 5em ;
     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
     background: linear-gradient(to bottom, #434343, #353535);
 }

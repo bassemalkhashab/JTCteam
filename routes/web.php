@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ServiceController;
@@ -22,6 +23,7 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('home');
 });
+Route::post('/contact', [ContactController::class, 'orderRequest']);
 Route::get('/about', function () {
     return view('home');
 });
