@@ -24,6 +24,7 @@ Route::get('/contact', function () {
     return view('home');
 });
 Route::post('/contact', [ContactController::class, 'orderRequest']);
+
 Route::get('/about', function () {
     return view('home');
 });

@@ -5772,6 +5772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Spinner.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/js/components/Footer.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -5785,6 +5786,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -5858,12 +5860,28 @@ function Contact() {
       unit = _useState24[0],
       setUnit = _useState24[1];
 
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState26 = _slicedToArray(_useState25, 2),
-      serviceData = _useState26[0],
-      setServiceData = _useState26[1];
+      response = _useState26[0],
+      setResponse = _useState26[1];
+
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState28 = _slicedToArray(_useState27, 2),
+      serviceData = _useState28[0],
+      setServiceData = _useState28[1];
+
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState30 = _slicedToArray(_useState29, 2),
+      isLoading = _useState30[0],
+      setIsLoading = _useState30[1];
+
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState32 = _slicedToArray(_useState31, 2),
+      success = _useState32[0],
+      setSuccess = _useState32[1];
 
   function submitRequest() {
+    setIsLoading(true);
     var data = {
       category: category,
       service: service,
@@ -5885,8 +5903,10 @@ function Contact() {
       },
       body: JSON.stringify(data)
     }).then(function (res) {
-      res.json();
+      return res.json();
     }).then(function (data) {
+      setIsLoading(false);
+      setSuccess(true);
       console.log(data);
     })["catch"](function (err) {
       return console.error(err);
@@ -6134,16 +6154,37 @@ function Contact() {
               }) : "", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "form j",
                 children: category == 'clothes' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-                  className: "btn btn-primary",
-                  onClick: function onClick(e) {
+                  className: "btn btn-".concat(success ? 'success' : 'primary'),
+                  onClick: !success ? function (e) {
                     e.preventDefault();
                     setScrollList(true);
+                  } : function (e) {
+                    e.preventDefault();
                   },
-                  children: "Next"
+                  children: function () {
+                    if (!success && !isLoading) {
+                      return 'Next';
+                    } else if (isLoading && !success) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {});
+                    } else {
+                      return 'Your request have been sent';
+                    }
+                  }()
                 }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                   type: "submit",
-                  className: "btn btn-primary",
-                  children: "Submit your request"
+                  className: "btn btn-".concat(success ? 'success' : 'primary'),
+                  onClick: success || isLoading ? function (e) {
+                    e.preventDefault();
+                  } : function () {}(),
+                  children: function () {
+                    if (!success && !isLoading) {
+                      return 'Submit your request';
+                    } else if (isLoading && !success) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {});
+                    } else {
+                      return 'Your request have been sent';
+                    }
+                  }()
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {

@@ -13,15 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customersinfo', function (Blueprint $table) {
+        Schema::create('customersinfos', function (Blueprint $table) {
             $table->id();
             $table->string('fname');
             $table->string('lname');
             $table->string('phone');
-            $table->string('address');
+            $table->string('address1');
+            $table->string('address2');
+            $table->string('category');
+            $table->string('email');
             $table->string('zipcode');
             $table->string('unit');
-            $table->string('service');
+            $table->string('service')->nullable();
+            $table->text('list')->nullable();
+
             $table->timestamps();
         });
     }

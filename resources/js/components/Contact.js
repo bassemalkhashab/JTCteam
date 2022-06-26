@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Footer from "./Footer";
 
 
@@ -21,9 +22,13 @@ function Contact() {
   const [address2, setAddress2]=useState('');
   const [postalCode, setPostalCode]=useState('');
   const [unit, setUnit]=useState('');
+  const [response, setResponse] = useState('')
   const [serviceData, setServiceData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   function submitRequest(){
+    setIsLoading(true);
     let data = {
       category:category,
       service:service,
@@ -43,11 +48,18 @@ function Contact() {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify(data)
-    }).then(res => {
-      res.json();
-    }).then(data=>{console.log(data)})
+    })
+    .then(res => {
+      return res.json();
+    }).then(data=>{
+      setIsLoading(false);
+      setSuccess(true);
+      console.log(data)
+    })
     .catch(err => console.error(err));
   }
+
+
 
   useEffect(()=>{
     fetch(`/service/details?category=commercial&service=service`)
@@ -151,7 +163,34 @@ function Contact() {
               </select></div>
             :""}
             <div className="form j">
-              {category == 'clothes'?<button className='btn btn-primary' onClick={(e)=>{e.preventDefault();setScrollList(true)}} >Next</button>:<button type="submit" className='btn btn-primary'>Submit your request</button>}
+              {category == 'clothes'?<button className={`btn btn-${success?'success':'primary'}`} onClick={!success?(e)=>{e.preventDefault();setScrollList(true)}:(e)=>{e.preventDefault()}} >{
+            (()=>{
+              if (!success&& !isLoading){
+                
+                return ('Next')
+              }
+              else if (isLoading && !success){
+                return (<Spinner/>)
+              }
+              else{
+                return ('Your request have been sent')
+              }
+            })()
+            
+            }</button>:<button type="submit" className={`btn btn-${success?'success':'primary'}`} onClick={success||isLoading?(e)=>{e.preventDefault()}:(()=>{})()}>{
+            (()=>{
+              if (!success&& !isLoading){
+                return ('Submit your request')
+              }
+              else if (isLoading && !success){
+                return (<Spinner/>)
+              }
+              else{
+                return ('Your request have been sent')
+              }
+            })()
+            
+            }</button>}
             </div>
         </div>
         <div className='p-5 d-flex flex-column align-items-center justify-content-between' id="service-list">
@@ -169,7 +208,7 @@ function Contact() {
           </ul>
           <div className='w-100' id="form-control-btns">
             <button className='btn btn-secondary w-100 mt-2' onClick={(e)=>{e.preventDefault();setScrollList(false)}} >Back</button>
-            <button onClick={()=>{setScrollList(false); }} type="submit" className='btn btn-primary w-100 mt-2'>Submit your request</button>
+            <button onClick={()=>{setScrollList(false); }} type="submit" className={`btn btn-primary w-100 mt-2`}>Submit your request</button>
           </div>
         </div>
           </div>
