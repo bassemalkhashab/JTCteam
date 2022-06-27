@@ -5884,7 +5884,9 @@ function Contact() {
     setIsLoading(true);
     var data = {
       category: category,
-      service: service,
+      service: serviceData.length > 0 ? serviceData.find(function (Service) {
+        return Service.id == service;
+      }).header : 'Nothing',
       list: list,
       fname: fname,
       lname: lname,
@@ -5906,18 +5908,17 @@ function Contact() {
       return res.json();
     }).then(function (data) {
       setIsLoading(false);
-      setSuccess(true);
-      console.log(data);
-    })["catch"](function (err) {
-      return console.error(err);
-    });
+      setSuccess(true); // console.log(data)
+    }); // .catch(err => console.error(err));
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetch("/service/details?category=commercial&service=service").then(function (res) {
       return res.json();
     }).then(function (data) {
-      setServiceData(data); // console.log(data);
+      setServiceData(data); // serviceData.length > 0 ?console.log(serviceData.find(Service=>Service.id == service)):console.log('No data')
+      // let z = data 
+      // console.log(z);
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
@@ -5926,9 +5927,10 @@ function Contact() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         id: "contact-layout",
         className: "container d-flex justify-content-evenly align-items-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "h5 shadow-sm p-3 mb-5 bg-body rounded",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
+          id: "contact-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
             id: "contact-details",
             className: "border border-dark p-3 m-0",
             children: ["  You can fill out the form so we can reach you out as soon as possible or Contact us on: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
@@ -5943,7 +5945,10 @@ function Contact() {
               className: "mb-0",
               children: "info@jtcteam.ca"
             }), " "]
-          })
+          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            src: "/storage/LogoRGB.png",
+            alt: "Logo"
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
           id: "form",
           onSubmit: function onSubmit(e) {
@@ -6138,7 +6143,9 @@ function Contact() {
                   onChange: function onChange(e) {
                     return setService(e.target.value);
                   },
-                  defaultValue: service,
+                  value: serviceData.length > 0 ? serviceData.find(function (Service) {
+                    return Service.id == service;
+                  }).header : '',
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
                     value: "none",
                     children: " Service"
@@ -6426,17 +6433,14 @@ function Header() {
                 children: "Contact"
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "icons",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-              className: "fa fa-search",
-              "aria-hidden": "true"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
               to: "market",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
                 className: "fa-solid fa-bag-shopping"
               })
-            })]
+            })
           })]
         })]
       })
@@ -6500,23 +6504,6 @@ function Header() {
                 onClick: toggleMenu,
                 to: "/market",
                 children: "Market"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "input-group rounded",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-                  type: "search",
-                  className: "form-control rounded",
-                  placeholder: "Search",
-                  "aria-label": "Search",
-                  "aria-describedby": "search-addon"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                  className: "input-group-text border-0",
-                  id: "search-addon",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                    className: "fas fa-search"
-                  })
-                })]
               })
             })]
           })
@@ -6773,6 +6760,7 @@ function Home() {
         className: "d-flex justify-content-between mt-5 pt-5",
         id: "options",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          id: "clothes-new",
           onClick: function onClick() {
             return window.scrollTo({
               top: 0,
@@ -6785,6 +6773,11 @@ function Home() {
             src: "/storage/clothes.png",
             alt: "Sofa",
             height: 300
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+            id: "new",
+            src: "/storage/new.png",
+            alt: "Sofa",
+            height: 100
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
             children: "Clothes"
           })]

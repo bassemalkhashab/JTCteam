@@ -41,6 +41,15 @@
 
 }
 
+#new{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#clothes-new{
+    position: relative;
+}
+
 .btn-style-1 {
     border: transparent;
     border-radius: 5px;

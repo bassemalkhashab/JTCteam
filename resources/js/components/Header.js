@@ -38,7 +38,7 @@ function Header() {
                             </li>
                         </ul>
                         <div className="icons">
-                            <i className="fa fa-search" aria-hidden="true"></i>
+                            {/* <i className="fa fa-search" aria-hidden="true"></i> */}
                             <Link to="market"><i className="fa-solid fa-bag-shopping"></i></Link>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ function Header() {
                             <li className={location.pathname.split('/')[1] == 'market' ? 'active' : ''}>
                                 <Link onClick={toggleMenu} to="/market">Market</Link>
                             </li>
-                            <li>
+                            {/* <li>
                             <div className="input-group rounded">
                             <input
                                 type="search"
@@ -99,7 +99,7 @@ function Header() {
                                 <i className="fas fa-search"></i>
                             </span>
                         </div>
-                            </li>
+                            </li> */}
                         </ul>
                         
                     </div>

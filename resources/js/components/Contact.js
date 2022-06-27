@@ -31,7 +31,7 @@ function Contact() {
     setIsLoading(true);
     let data = {
       category:category,
-      service:service,
+      service:serviceData.length > 0? serviceData.find(Service=>Service.id == service).header:'Nothing',
       list:list,
       fname:fname,
       lname:lname,
@@ -54,9 +54,9 @@ function Contact() {
     }).then(data=>{
       setIsLoading(false);
       setSuccess(true);
-      console.log(data)
+      // console.log(data)
     })
-    .catch(err => console.error(err));
+    // .catch(err => console.error(err));
   }
 
 
@@ -66,7 +66,9 @@ function Contact() {
         .then(res=>res.json())
         .then(data=>{
           setServiceData(data);
-          // console.log(data);
+          // serviceData.length > 0 ?console.log(serviceData.find(Service=>Service.id == service)):console.log('No data')
+          // let z = data 
+          // console.log(z);
         })
       
   },[]);
@@ -76,7 +78,7 @@ function Contact() {
     <div className="background">
 
     <div id="contact-layout" className='container d-flex justify-content-evenly align-items-center'>
-      <div className="h5 shadow-sm p-3 mb-5 bg-body rounded"><h5 id="contact-details" className='border border-dark p-3 m-0'>  You can fill out the form so we can reach you out as soon as possible or Contact us on: <br /><br /> <i className="fa-solid fa-phone"></i> <a href="tel:+1 226 884 4911">+1 226 884 4911</a> <br /><br /><i className="fa-solid fa-envelope"></i> <a href="mailto:info@jtcteam.ca" className="mb-0">info@jtcteam.ca</a> </h5></div>
+      <div className="h5 shadow-sm p-3 mb-5 bg-body rounded" id='contact-card'><h5 id="contact-details" className='border border-dark p-3 m-0'>  You can fill out the form so we can reach you out as soon as possible or Contact us on: <br /><br /> <i className="fa-solid fa-phone"></i> <a href="tel:+1 226 884 4911">+1 226 884 4911</a> <br /><br /><i className="fa-solid fa-envelope"></i> <a href="mailto:info@jtcteam.ca" className="mb-0">info@jtcteam.ca</a> </h5> <img src="/storage/LogoRGB.png" alt="Logo" /></div>
       {/* <h4 id="contact-details">Contact us on <a href="tel:+1 226 884 4911">+1 226 884 4911</a> or fill out the form so we can reach you out as soon as possible</h4> */}
           <form id="form" onSubmit={(e)=>{e.preventDefault(); submitRequest();}}>
           <div id="form-scroll" className={scrollList?'scroll':''}>
@@ -148,7 +150,7 @@ function Contact() {
             </div>
             {category!='clothes'?
             <div className='form k'>
-              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} defaultValue={service}>
+              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} value={ serviceData.length > 0? serviceData.find(Service=>Service.id == service).header:''}>
                 <option value="none" > Service</option>
                 
                 { 
@@ -156,7 +158,7 @@ function Contact() {
                   serviceData
                   .filter(service=>service.category == category)
                   .map((value, index)=>(
-                    <option value={value.header} key={index}>{value.header}</option>
+                    <option value={value.header}  key={index}  >{value.header}</option>
                   ))
                     
                 }
