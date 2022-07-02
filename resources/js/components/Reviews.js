@@ -68,7 +68,7 @@ function Reviews() {
         .then(res => res.json())
         .then(data=> console.log(data))
         .then(()=>{
-            const submitButton =document.querySelector('#submit-button');
+            const submitButton = document.querySelector('#submit-button');
             
             setIsLoading(false);
             submitButton.style.backgroundColor="#0b5ed7";

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubmitReviewRequest;
 use Illuminate\Http\Request;
 use App\Models\Reviews;
 
@@ -9,8 +10,18 @@ class ReviewsController extends Controller
 {
     //
     
-    public function submitReview(Request $request){
-        
+    public function submitReview(SubmitReviewRequest $request){
+
+        // $validated = $request-> validated();
+        // if($validated->fails()){
+        //     return response()->json([
+        //         'error' => true,
+        //         'message' => $validated->errors()
+        //     ]);
+        // }
+
+        // return response()->json($validated);
+
         if ($request->file('image')) {
             $data = json_decode($request["data"]);
             
@@ -23,7 +34,7 @@ class ReviewsController extends Controller
             $Reviews->stars = $data->stars;
             $Reviews->image = $image;
             $Reviews->save();
-            return response()->json('{"success":"Your review has been added"}');
+            return response()->json('{"success":true');
         }
         else{
 
