@@ -62,13 +62,10 @@ function Contact() {
 
 
   useEffect(()=>{
-    fetch(`/service/details?category=commercial&service=service`)
+    fetch(`/service/details?category=commercial`)
         .then(res=>res.json())
         .then(data=>{
           setServiceData(data);
-          // serviceData.length > 0 ?console.log(serviceData.find(Service=>Service.id == service)):console.log('No data')
-          // let z = data 
-          // console.log(z);
         })
       
   },[]);
@@ -150,7 +147,7 @@ function Contact() {
             </div>
             {category!='clothes'?
             <div className='form k'>
-              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} value={ serviceData.length > 0? serviceData.find(Service=>Service.id == service).header:''}>
+              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} value={ serviceData.length > 0 && service? serviceData.find(Service=>Service.header == service).header:'none'}>
                 <option value="none" > Service</option>
                 
                 { 

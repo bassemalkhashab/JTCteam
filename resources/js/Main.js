@@ -7,6 +7,7 @@ import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Service from "./components/Service";
 import Contact from "./components/Contact";
+import Market from "./components/Market";
 
 function App() {
     return (
@@ -30,9 +31,7 @@ function App() {
                         <Contact/>
                     </Route>
                     <Route path="/market">
-                        <div>
-                            <h1>market</h1>
-                        </div>
+                        <Market/>
                     </Route>
                 </Switch>
             </div>

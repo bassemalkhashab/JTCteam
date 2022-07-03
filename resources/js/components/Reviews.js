@@ -12,6 +12,8 @@ function Reviews() {
     const [image, setImage] = useState(null);
     const [photos, setPhotos] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [successMsg, setSuccessMsg]= useState(false);
+    const [failedMsg, setFailedMsg]= useState(false);
     const radios = [
         { name: "1", value: "1" },
         { name: "2", value: "2" },
@@ -43,7 +45,7 @@ function Reviews() {
         setIsLoading(true);
         const inputFile = document.querySelector('input[type="file"]');
    
-        console.log(inputFile)
+        // console.log(inputFile)
         const myData = {
             name: name||"why no name",
             stars: radioValue||"1",
@@ -53,12 +55,7 @@ function Reviews() {
         myFile.append('image', inputFile.files[0]);
         myFile.append('data',JSON.stringify(myData));
 
-        reviews.push({
-            name: name||"why no name",
-            stars: radioValue||"1",
-            image: inputFile.files[0]||'default-photo.png',
-            review: review|| "why no review"
-        })
+        
 
         const reviewOptions = {
             method: "POST",
@@ -66,7 +63,23 @@ function Reviews() {
         };
         fetch('/about/reviews', reviewOptions)
         .then(res => res.json())
-        .then(data=> console.log(data))
+        .then((data)=> {
+            if (data.success == true){
+                setSuccessMsg('true');
+                reviews.push({
+                    name: name||"why no name",
+                    stars: radioValue||"1",
+                    image: data.image,
+                    review: review|| "why no review"
+                })
+            }
+            else{
+                setSuccessMsg('false');
+                setFailedMsg(data.errors.image[7])
+            }
+            // console.log(inputFile)
+            
+        })
         .then(()=>{
             const submitButton = document.querySelector('#submit-button');
             
@@ -180,6 +193,9 @@ function Reviews() {
                 </button>
             </div>
             <div className="reviews-container">
+            {successMsg&&<div className={`alert alert-${successMsg == 'true'?'success':'danger'} review`} role="alert">
+                {successMsg== 'true'?'Thank you for sending your review':failedMsg}
+            </div>}
                 {reviews.map((review, index) => (
                     <div className="review" key={index}>
                         <img

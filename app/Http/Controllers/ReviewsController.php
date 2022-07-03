@@ -34,7 +34,7 @@ class ReviewsController extends Controller
             $Reviews->stars = $data->stars;
             $Reviews->image = $image;
             $Reviews->save();
-            return response()->json('{"success":true');
+            return response()->json(["success"=>true, "image"=>$image]);
         }
         else{
 
@@ -45,7 +45,7 @@ class ReviewsController extends Controller
             $Reviews->stars = $data->stars;
             $Reviews->image = "default-photo.png";
             $Reviews->save();
-            return response()->json('{"success":"Your review has been added"}');
+            return response()->json(["success"=>true, "image"=> "default-photo.png"]);
     
         }
     }
