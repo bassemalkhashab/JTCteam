@@ -12,9 +12,9 @@ function Footer() {
               </div>
               <div className="summary" id="services">
                 <h5>Services</h5>
-                <Link to="/service/clothes">Clothes</Link>
-                <Link to="/service/residential">Residential</Link>
-                <Link to="/service/commercial">Commercial</Link>
+                <Link to="/service?category=clothes">Clothes</Link>
+                <Link to="/service?category=residential">Residential</Link>
+                <Link to="/service?category=commercial">Commercial</Link>
               </div>
               <div className="summary" id="contact">
                 <h5>Contact info</h5>
