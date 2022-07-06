@@ -5911,7 +5911,7 @@ function Contact() {
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    fetch("/service/details?category=commercial").then(function (res) {
+    fetch("/service/details?category=".concat(category)).then(function (res) {
       return res.json();
     }).then(function (data) {
       setServiceData(data);
@@ -6140,7 +6140,7 @@ function Contact() {
                     return setService(e.target.value);
                   },
                   value: serviceData.length > 0 && service ? serviceData.find(function (Service) {
-                    return Service.header == service;
+                    return Service.id == service;
                   }).header : 'none',
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
                     value: "none",
