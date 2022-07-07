@@ -62,7 +62,7 @@ function Contact() {
 
 
   useEffect(()=>{
-    fetch(`/service/details?category=commercial`)
+    fetch(`/service/details?category=${category}`)
         .then(res=>res.json())
         .then(data=>{
           setServiceData(data);

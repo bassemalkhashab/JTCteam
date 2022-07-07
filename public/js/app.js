@@ -5911,7 +5911,7 @@ function Contact() {
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    fetch("/service/details?category=commercial").then(function (res) {
+    fetch("/service/details?category=".concat(category)).then(function (res) {
       return res.json();
     }).then(function (data) {
       setServiceData(data);
@@ -6277,13 +6277,13 @@ function Footer() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
           children: "Services"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          to: "/service?category=clothes",
+          to: "/service?category=clothes&service=1",
           children: "Clothes"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          to: "/service?category=residential",
+          to: "/service?category=residential&service=1",
           children: "Residential"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          to: "/service?category=commercial",
+          to: "/service?category=commercial&service=1",
           children: "Commercial"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
