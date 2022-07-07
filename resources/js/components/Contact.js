@@ -147,7 +147,7 @@ function Contact() {
             </div>
             {category!='clothes'?
             <div className='form k'>
-              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} value={ serviceData.length > 0 && service? serviceData.find(Service=>Service.header == service).header:'none'}>
+              <select name="service" id="select-service" onChange={(e)=>setService(e.target.value)} value={ serviceData.length > 0 && service? serviceData.find(Service=>Service.id == service).header:'none'}>
                 <option value="none" > Service</option>
                 
                 { 
