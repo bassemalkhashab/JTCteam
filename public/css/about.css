@@ -1,0 +1,164 @@
+#reviews{
+    display: flex;
+    justify-content: space-between;
+}
+#reviews img{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+}
+
+#reviews-button{
+    display: inline-block;
+    text-decoration: none;
+    font-size: large;
+    padding:  1em 2em;
+    color: #1D4B5F;
+    border: 3px solid #1D4B5F;
+    border-radius: 0 20px 0 20px;
+    transition: all 0.3s ease;
+
+}
+#reviews-button i{
+    color: #1D4B5F;
+    margin-left: 1em;
+    transition: all 0.3s ease;
+}
+
+#reviews-button:hover{
+    background-color: #1D4B5F;
+    color: white;
+}
+
+#reviews-button:hover i{
+    color: white;
+}
+
+#customers {
+
+    background-color: var(--dark-grey);
+}
+
+#customers h2{
+    color: white;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    padding: 0.5em;
+    margin: 1em;
+    transform: translateX(-65%);
+}
+
+#customers h2:after{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    left:50%;
+    top: 100%;
+    transform: translateX(-50%);
+    background-color: white;
+}
+.scroll-container {
+    cursor: -webkit-grab;
+    cursor: grab;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  scroll-behavior: smooth;
+}
+.scroll-container > div {
+  display: inline-block;
+  margin: 5em;
+  width: 10em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.scroll-container h5{
+    
+  white-space: normal;
+  text-align: center;
+  color: white;
+}
+
+.scroll-container .avatar{
+    width: 10em;
+    height: 10em;
+    border: 3px solid rgb(248, 249, 250);
+    margin: 2em auto;
+    display: grid;
+    place-content: center;
+    padding: 1em;
+}
+.scroll-container .avatar img{
+    max-width: 7em;
+}
+
+.scroll-buttons{
+    display: flex;
+    justify-content: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    padding: 2em;
+}
+
+.scroll-buttons button{
+    padding: 1em 2em;
+    border: transparent;
+    margin: 1px;
+    transition: all 0.25s ease;
+    color:var(--dark-grey);
+}
+.scroll-buttons button:hover{
+    background-color: darkgray;
+}
+.scroll-buttons button:active{
+    transform: scale(0.95);
+}
+
+.scroll-buttons button:nth-of-type(1){
+    border-radius: 30px 0 0 30px;
+}
+.scroll-buttons button:nth-of-type(2){
+    border-radius: 0 30px 30px 0;
+}
+
+@media (max-width:1000px){
+    #reviews{
+        flex-direction: column;
+        margin-right: auto;
+        padding-right: 0;
+        height: auto;
+    }
+    #reviews > div{
+        width: 100% !important;
+    }
+    #reviews img{
+        position: static;
+        width: 50%;
+        margin-left: auto;
+    }
+    .scroll-container > div {
+        margin: 2em;
+    }
+    #reviews-button{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 3em !important;
+    }
+    #reviews > div h2, #reviews > div p{
+        text-align: center;
+    }
+}
+
+
+
+

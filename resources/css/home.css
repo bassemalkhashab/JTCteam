@@ -1,0 +1,127 @@
+
+
+.option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 30px;
+    margin:1em
+}
+#cover{
+    position: relative;
+    height: 30em; 
+
+}
+
+#cover .filter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+#cover h2{
+    position: absolute;
+    left:3em;
+    width: 40%;
+    top:80%;
+    z-index: 2;
+    color: var(--dark-grey);
+    color: rgb(76, 76, 76);
+}
+
+#home >h5{
+    margin: 3em 0 1.5em 0;
+
+}
+
+#new{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#clothes-new{
+    position: relative;
+}
+
+.btn-style-1 {
+    border: transparent;
+    border-radius: 5px;
+    background: linear-gradient(to top ,#353535, #434343);
+    width: 12em;
+    height: 4em;
+    color: white;
+    font-size: large;
+}
+
+#home h5 + a button:hover {
+    background: linear-gradient(to top ,#EB8958, #F1B791);
+}
+
+#cover img{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+}
+
+.option:hover{
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.15);
+}
+
+h5{
+    color:var(--dark-grey);
+}
+
+.option h5{
+    position: relative;
+}
+
+.option:hover h5{
+    color:black;    
+}
+
+.option h5:after{
+    content:'';
+    position: absolute;
+    top: 125%;
+    left: 0;
+    width:0;
+    height: 2px;
+    background-color:black;
+    transition: width 0.3s ease-in-out;
+}
+.option:hover h5::after{
+    width: 100%;
+}
+
+@media(max-width:1000px){
+    #options{
+        flex-direction: column;
+    }
+    
+    #home h5{
+        text-align: center;
+    }
+
+    #home > a{
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #cover h2{
+
+        left:1em;
+        width: 60%;
+        top:70%;
+
+
+    }
+}

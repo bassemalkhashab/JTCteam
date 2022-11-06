@@ -1,0 +1,148 @@
+.reviews{
+    height: 20vh;
+}
+
+.review{
+    /* width: 50%; */
+    max-width: 60em;
+    /* border: 1px solid; */
+    border-radius: 30px;
+    box-shadow: 1px 1px 11px 0px  rgba(0, 0, 0, 0.15);
+    margin: 2em auto;
+    display: grid;
+    gap: 0.25em 2em;
+    padding: 2em;
+    grid-template-areas: "a b b b b b"
+                         "a c c c c c"
+                         "a d d d d d";
+}
+
+.reviews-container{
+    margin: 5em 0em;
+}
+
+.review > img{
+    grid-area: a;
+    max-width: 10em;
+    aspect-ratio: 1 / 1;
+    margin: auto 3em;
+    object-fit: contain;
+}
+.review > h4{
+    margin-bottom: 0;
+    grid-area: b;
+    font-weight: bold;
+}
+.review > .stars{
+    grid-area: c;
+}
+.review > p{
+    grid-area: d;
+}
+.review .stars > i{
+    margin: 0.3em;
+    font-size: 1.25em;
+    color: orange;
+}
+
+.add-review-button{
+    font-size: 1em;
+}
+.add-review-button:hover{
+    background: linear-gradient(to bottom, #32717E, #1F4C61);
+
+}
+
+.add-review-button > i{
+    margin-right: 0.5em;
+}
+
+#submit-button{
+    height: 2.5em;
+    font-size: 1.25em ;
+    margin-top: 2em !important;
+}
+
+#review-form{
+    background-color: #eee;
+    padding: 5em;
+    margin: auto;
+    width: 50em;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+}
+#close-btn-2{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: transparent;
+}
+
+#form-body{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.close-btn{
+    margin: 2em;
+    position: absolute;
+    right: 0;
+    top:0;
+    padding: 0.5em 1em;
+    border: none;
+    color: black;
+    background-color: transparent;
+}
+
+#spinner-border{
+    display: none;
+}
+
+@media(max-width:1000px){
+    .reviews-container{
+        font-size: 12px;
+        padding: 1em;
+    }
+    .review{
+        grid-template-areas: "b b b b a a"
+                             "c c c c a a"
+                             "d d d d d d"
+                             "d d d d d d";
+        
+        border-radius: 10px;
+        margin: 1em auto;
+        
+    }
+    .review >img{
+        width: 5em;
+        margin-left: auto;
+        margin-right: 0.25em;
+        justify-self: flex-end;
+    }
+    #review-form{
+        padding: 3em 1em;
+        margin: 1em;
+    }
+    .add-review{
+        flex-direction: column;
+        align-items: center;
+    }
+    .add-review > h2{
+        font-size: 32px;
+        margin: 1em;
+    }
+    .close-btn{
+        margin: 2em 1em;
+        padding: 0;
+    }
+}
