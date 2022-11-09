@@ -20,7 +20,6 @@ class ServiceController extends Controller
         $category = $request->category;
         $service = $request->service;
 
-        
         $Services = Services::where('category', $category)->get();
         return response()->json($Services);
     }

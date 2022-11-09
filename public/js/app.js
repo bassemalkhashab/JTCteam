@@ -6432,7 +6432,8 @@ function Header() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
           className: "navbar-brand",
           src: "/storage/LogoRGB.png",
-          alt: "JTCteam"
+          alt: "JTCteam",
+          id: "header-logo"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "collapse navbar-collapse",
           id: "collapse",

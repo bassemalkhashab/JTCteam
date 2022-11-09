@@ -21,6 +21,7 @@ function Header() {
                         className="navbar-brand"
                         src="/storage/LogoRGB.png"
                         alt="JTCteam"
+                        id="header-logo"
                     />
                     <div className="collapse navbar-collapse" id="collapse">
                         <ul id="collapse-ul">
