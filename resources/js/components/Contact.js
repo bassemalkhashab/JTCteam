@@ -36,20 +36,7 @@ function Contact() {
     // console.log(list)
 }
 
-// function getCookie(name) {
-//   if (!document.cookie) {
-//     return null;
-//   }
 
-//   const xsrfCookies = document.cookie.split(';')
-//     .map(c => c.trim())
-//     .filter(c => c.startsWith(name + '='));
-
-//   if (xsrfCookies.length === 0) {
-//     return null;
-//   }
-//   return decodeURIComponent(xsrfCookies[0].split('=')[1]);
-// }
 
   function submitRequest(){
     setIsLoading(true);
@@ -72,8 +59,6 @@ function Contact() {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
-        // "X-Requested-With": "XMLHttpRequest",
-        // 'X-CSRF-TOKEN': csrfToken
       }, 
       body: JSON.stringify(data)
     })
@@ -82,14 +67,10 @@ function Contact() {
     }).then(data=>{
       setIsLoading(false);
       setSuccess(true);
-      // console.log(data)
     })
-    // .catch(err => console.error(err));
   }
 
-  // eyJpdiI6IjRZdDRGMDZ4TytSMC9xYjc2ajVwNnc9PSIsInZhbHVlIjoiOGx3SlUyYTdLb2I5Ujh5SjcvbndBTGtyN0RQQloxdHhjbTNxWE9mRE42cnZTZzM4ZWpQZHcxdUYyRFJSbkVFR1BRcTZWZ3RxRitBVkl6MTdqU2UrOHI4Y3QwejZ4emh5OEVRdXo0L01qaTNwUDc4eGlQenZCWG90cmdjU1NOK2giLCJtYWMiOiIyYjNhZGY2MGI0YmQ5ZDAzMGYwMWE5Y2U1NjEwMDdhNjVhMDA5MmYyMjUwYzgzMGI2MWJiMDMzNDgwOWU0NzY2IiwidGFnIjoiIn0%3D
-  // eyJpdiI6ImRPOWdZNGpVak91K3dRK29iTG1YbGc9PSIsInZhbHVlIjoiSXFJWlhoL3cvYUtZaW1TYUFiL0lLYVgvQTRKdTd2YTM5R3NvNTFEbnFsM2N1N0U5YUpKRDVpTVl0dHZVZE13SVRiUWtEdGJSSWVmZmR4b1ZqcGo0VTc5Ukg2SWR6RkZpdFdhdjA1MEM4U24wWEYrVm1zc2hSdUtkZnlEOGxlRkEiLCJtYWMiOiJjYmEyNjE4NjY1ODdiZWViZjgzMDJiZGRjNjMzZTI2MDkyMWQyNTk1Y2Y1ZDQ0NDY0MWM0YjkwOTgwODkwMjAyIiwidGFnIjoiIn0=
-
+  
   useEffect(()=>{
     fetch(`/service/details?category=${category}`)
         .then(res=>res.json())

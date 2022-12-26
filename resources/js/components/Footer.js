@@ -1,9 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import CallBubble from "./CallBubble";
 
 function Footer() {
     return (
         <footer>
+          <CallBubble></CallBubble>
             <div className="container">
               <div className="summary" id="market">
                 <h5>Market</h5>
@@ -22,13 +24,13 @@ function Footer() {
                 <a href="tel:+1 226 884 4911">+1 226 884 4911</a>
               </div>
               <div className="d-flex flex-column align-items-end" id="apps">
-                <h4 className="text-end">Our applications will be supported soon</h4>
+                <h4 className="text-end">Social media</h4>
                 <div className="icons">
-                  <i className="fa-brands fa-instagram"></i>
-                  <i className="fa-brands fa-facebook"></i>
-                  <i className="fa-brands fa-linkedin"></i>
-                  <i className="fa-brands fa-android"></i>
-                  <i className="fa-brands fa-app-store-ios"></i> 
+                  <a href="https://www.instagram.com/just.try.cleaning/" target="_blank"><i className="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/Just-Try-Cleaning-110089588595379" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.youtube.com/@justtrycleaning/videos" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>               
+                  <a href="https://www.tiktok.com/@just.try.cleaning?lang=en" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-tiktok"></i></a>                 
+                  <a href="https://www.snapchat.com/add/just.tryclean?share_id=y5AZ89t6vqQ&locale=en-GB" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-snapchat"></i> </a>                 
                 </div>
               </div>
               <div id="copywrite">
